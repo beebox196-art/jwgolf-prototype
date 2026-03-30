@@ -5,7 +5,17 @@ export default function LessonsPage() {
     <div className="flex-1">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#1b4332]">
-        <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1b4332] via-[#0f0f0f] to-[#1a365d]" />
+        <div className="absolute inset-0 opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1" fill="#d4af37" opacity="0.5" />
+              </pattern>
+            </defs>
+            <rect width="1920" height="1080" fill="url(#dots)" />
+          </svg>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#1b4332]/80 to-[#1b4332]" />
         
         <div className="section-container relative z-10 text-center py-20">

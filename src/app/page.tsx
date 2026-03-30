@@ -6,8 +6,18 @@ export default function Home() {
     <div className="flex-1 flex-col">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-50" />
-        <div className="hero-gradient absolute inset-0" />
+        <div className="absolute inset-0 bg-[url('/globe.svg')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f0f] via-[#1a365d] to-[#1b4332]" />
+        <div className="absolute inset-0 opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1" fill="#d4af37" opacity="0.5" />
+              </pattern>
+            </defs>
+            <rect width="1920" height="1080" fill="url(#dots)" />
+          </svg>
+        </div>
         
         <div className="section-container relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-up">
@@ -226,7 +236,7 @@ export default function Home() {
 
       {/* Epilepsy Resilience Story Teaser */}
       <section className="section-padding bg-gradient-to-b from-black to-[#1b4332]/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1b4332]/20 to-[#1a365d]/20" />
         
         <div className="section-container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -274,8 +284,8 @@ export default function Home() {
       </section>
 
       {/* CTA / Free Assessment Section */}
-      <section className="section-padding bg-accent-green relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('/hero-bg.jpg')] bg-cover bg-center" />
+      <section className="section-padding bg-[#1b4332] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-[#d4af37]/30 to-[#1b4332]/30" />
         
         <div className="section-container relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 gold-gradient-text">
