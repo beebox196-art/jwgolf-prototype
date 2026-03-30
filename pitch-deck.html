@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JW Golf - Website Redesign Proposal</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #F4E4BC;
+      --green: #1B4D3E;
+      --green-dark: #0D2818;
+      --dark: #0A0F0D;
+      --white: #FFFFFF;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+    }
+    
+    /* Slide Container */
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      scroll-snap-align: start;
+    }
+    
+    .container {
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    /* Typography */
+    .headline {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .subheadline {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    
+    .highlight { color: var(--gold); }
+    
+    .stat {
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 800;
+      color: var(--gold);
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.7;
+    }
+    
+    /* Cards */
+    .card {
+      background: linear-gradient(135deg, rgba(27, 77, 62, 0.3), rgba(13, 40, 24, 0.5));
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 1rem 0;
+    }
+    
+    /* Problem/Solution Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .problem-item {
+      color: #FF6B6B;
+      font-weight: 500;
+    }
+    
+    .solution-item {
+      color: #4ECDC4;
+      font-weight: 500;
+    }
+    
+    /* CTA Button */
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), #B8962E);
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 1.125rem;
+      padding: 1rem 2.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+    }
+    
+    /* Screenshot Preview */
+    .preview {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 1rem;
+      border: 3px solid var(--gold);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      margin: 2rem 0;
+    }
+    
+    /* Progress dots */
+    .progress {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 100;
+    }
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .dot.active {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    
+    /* Sections */
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+    
+    /* Divider */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 1.5rem 0;
+    }
+    
+    /* Revenue comparison */
+    .revenue-bar {
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 1rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+    }
+    
+    .current {
+      width: 25%;
+      background: linear-gradient(90deg, #FF6B6B, #FF8E8E);
+    }
+    
+    .potential {
+      width: 100%;
+      background: linear-gradient(90deg, var(--green), #2D7A5E, var(--gold));
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .progress { display: none; }
+      .slide { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <!-- Slide 1: Title -->
+  <section class="slide" id="1">
+    <div class="container" style="text-align: center;">
+      <p style="font-size: 1rem; letter-spacing: 0.2em; opacity: 0.6; margin-bottom: 1rem;">WEBSITE REDESIGN PROPOSAL</p>
+      <h1 class="headline">
+        Transform <span class="highlight">JW Golf</span><br>
+        Into Your Best Asset
+      </h1>
+      <div class="divider" style="margin: 2rem auto;"></div>
+      <p class="subheadline">A complete digital presence designed to convert visitors into clients</p>
+      <a href="http://localhost:3001" class="cta" target="_blank">View Live Prototype →</a>
+    </div>
+  </section>
+
+  <!-- Slide 2: The Problem -->
+  <section class="slide" id="2">
+    <div class="container">
+      <h2 class="headline">The Current Site <span class="highlight">Under-sells</span> Your Expertise</h2>
+      
+      <div class="grid">
+        <div class="card">
+          <h3 style="color: #FF6B6B; margin-bottom: 1rem;">❌ What's Missing</h3>
+          <ul style="list-style: none;">
+            <li class="problem-item">• No clear USP or differentiation</li>
+            <li class="problem-item">• Generic template design</li>
+            <li class="problem-item">• No conversion funnel</li>
+            <li class="problem-item">• Testimonials buried</li>
+            <li class="problem-item">• No booking CTA</li>
+            <li class="problem-item">• Your unique story is invisible</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: #4ECDC4; margin-bottom: 1rem;">✓ What We've Built</h3>
+          <ul style="list-style: none;">
+            <li class="solution-item">• "One Clear Fix" positioning</li>
+            <li class="solution-item">• Premium dark/gold design</li>
+            <li class="solution-item">• Clear booking journey</li>
+            <li class="solution-item">• Testimonials front & centre</li>
+            <li class="solution-item">• Multiple booking CTAs</li>
+            <li class="solution-item">• Your resilience story told right</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3: The Unique Angle -->
+  <section class="slide" id="3">
+    <div class="container" style="text-align: center;">
+      <p style="font-size: 1rem; letter-spacing: 0.2em; opacity: 0.6; margin-bottom: 1rem;">YOUR UNTAPPED DIFFERENTIATOR</p>
+      <h2 class="headline">The <span class="highlight">Resilience</span> Story</h2>
+      
+      <div class="card" style="max-width: 600px; margin: 2rem auto;">
+        <p style="font-size: 1.25rem; font-style: italic; opacity: 0.9;">
+          "5 brain surgeries. A career rebuilt from nothing. The mental strength that got me through is what I bring to every lesson."
+        </p>
+      </div>
+      
+      <p class="subheadline" style="max-width: 500px; margin: 0 auto;">
+        Not self-promotion — <strong>helping others</strong> facing their own challenges. The charity partnership gives you a way to tell this story that feels right.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 4: The Numbers -->
+  <section class="slide" id="4">
+    <div class="container">
+      <h2 class="headline" style="text-align: center;">The Revenue Path</h2>
+      
+      <div style="margin: 3rem 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem;">
+          <span style="font-size: 1rem; opacity: 0.7;">Current Position</span>
+          <span style="font-weight: 700;">£40k/year</span>
+        </div>
+        <div class="revenue-bar current">£40k</div>
+      </div>
+      
+      <div style="margin: 3rem 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem;">
+          <span style="font-size: 1rem; opacity: 0.7;">With Premium Positioning + Online Coaching</span>
+          <span style="font-weight: 700; color: var(--gold);">£156k/year</span>
+        </div>
+        <div class="revenue-bar potential">£156k</div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <p style="font-size: 2rem; font-weight: 700;"><span class="highlight">+290%</span> potential growth</p>
+        <p style="opacity: 0.6; margin-top: 0.5rem;">Source: Charles's strategy analysis, March 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 5: The Preview -->
+  <section class="slide" id="5">
+    <div class="container" style="text-align: center;">
+      <p style="font-size: 1rem; letter-spacing: 0.2em; opacity: 0.6; margin-bottom: 1rem;">THE NEW WEBSITE</p>
+      <h2 class="headline">See It <span class="highlight">Live</span></h2>
+      
+      <p class="subheadline">4 pages built. Premium design. Ready to deploy.</p>
+      
+      <!-- Screenshot of homepage -->
+      <img src="screenshot-homepage.png" alt="JW Golf Homepage Preview" class="preview">
+      
+      <a href="http://localhost:3001" class="cta" target="_blank">Open Prototype →</a>
+    </div>
+  </section>
+
+  <!-- Slide 6: The Ask -->
+  <section class="slide" id="6">
+    <div class="container" style="text-align: center;">
+      <h2 class="headline">Ready to <span class="highlight">Proceed</span>?</h2>
+      
+      <div class="grid" style="text-align: left; margin-top: 2rem;">
+        <div class="card">
+          <h3 style="color: var(--gold); margin-bottom: 1rem;">📋 What's Included</h3>
+          <ul style="list-style: none; opacity: 0.9;">
+            <li>✓ Homepage with "One Clear Fix" positioning</li>
+            <li>✓ About page telling your full story</li>
+            <li>✓ Lessons page with packages & pricing</li>
+            <li>✓ Contact page with booking forms</li>
+            <li>✓ Mobile-first responsive design</li>
+            <li>✓ Dark premium aesthetic</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--gold); margin-bottom: 1rem;">🚀 Next Steps</h3>
+          <ul style="list-style: none; opacity: 0.9;">
+            <li>1. Review the prototype</li>
+            <li>2. Provide feedback/adjustments</li>
+            <li>3. Add your real content (photos, testimonials)</li>
+            <li>4. Deploy to live domain</li>
+            <li>5. Launch your new presence</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="divider" style="margin: 2rem auto;"></div>
+      
+      <p style="opacity: 0.6; font-size: 0.875rem;">
+        Built for James Whittaker by Adam Box · March 2026
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // Simple scroll progress tracking
+    const dots = document.querySelectorAll('.dot');
+    const slides = document.querySelectorAll('.slide');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i + 1 == id);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    slides.forEach(slide => observer.observe(slide));
+  </script>
+</body>
+</html>
