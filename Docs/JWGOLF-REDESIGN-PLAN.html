@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JW Golf Redesign Plan</title>
+  <style>
+    :root {
+      --green-dark: #1B4332;
+      --green-accent: #4CAF50;
+      --navy: #1A365D;
+      --gold: #C9A227;
+      --cream: #F5F5DC;
+      --purple: #7B3FA0;
+      --white: #FFFFFF;
+      --gray-light: #F8F9FA;
+      --gray: #6B7280;
+      --gray-dark: #374151;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: var(--gray-dark);
+      background: var(--gray-light);
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      min-height: 100vh;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--green-dark), var(--navy));
+      color: var(--white);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    
+    header h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    
+    header .subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+    }
+    
+    header .meta {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    
+    /* Executive Summary */
+    .executive-summary {
+      background: linear-gradient(135deg, rgba(203,162,39,0.1), rgba(27,67,50,0.05));
+      padding: 1.5rem;
+      border-bottom: 3px solid var(--gold);
+    }
+    
+    .executive-summary h2 {
+      color: var(--green-dark);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .executive-summary h2::before {
+      content: "📊";
+    }
+    
+    .key-differentiators {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    .differentiator {
+      background: var(--white);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border-left: 3px solid var(--gold);
+    }
+    
+    .differentiator strong {
+      color: var(--green-dark);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
+    .impact-goal {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    
+    .impact-goal strong {
+      color: var(--gold);
+    }
+    
+    /* Section Navigation */
+    .section-nav {
+      background: var(--gray-light);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .section-nav h3 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .nav-links a {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: var(--gray-dark);
+      transition: all 0.2s;
+    }
+    
+    .nav-links a:hover {
+      background: var(--green-dark);
+      color: var(--white);
+      border-color: var(--green-dark);
+    }
+    
+    /* Main Content */
+    main {
+      padding: 1.5rem;
+    }
+    
+    section {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    section:last-child {
+      border-bottom: none;
+    }
+    
+    section h2 {
+      color: var(--green-dark);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--green-dark);
+    }
+    
+    section h3 {
+      color: var(--navy);
+      font-size: 1.1rem;
+      margin: 1.5rem 0 0.75rem 0;
+    }
+    
+    section h4 {
+      color: var(--gray-dark);
+      font-size: 1rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+    
+    p {
+      margin-bottom: 0.75rem;
+    }
+    
+    ul, ol {
+      margin: 0.75rem 0;
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.4rem;
+    }
+    
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    
+    th, td {
+      padding: 0.75rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    th {
+      background: var(--green-dark);
+      color: var(--white);
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background: var(--gray-light);
+    }
+    
+    /* Callout boxes */
+    .callout {
+      background: var(--gray-light);
+      border-left: 3px solid var(--green-accent);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    .callout.important {
+      border-left-color: var(--gold);
+      background: rgba(203,162,39,0.1);
+    }
+    
+    .callout.question {
+      border-left-color: var(--purple);
+      background: rgba(123,63,160,0.1);
+    }
+    
+    .callout strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .stat-box {
+      background: linear-gradient(135deg, var(--green-dark), var(--navy));
+      color: var(--white);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+    }
+    
+    .stat-box .number {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    
+    .stat-box .label {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+    
+    /* Revenue path */
+    .revenue-path {
+      background: linear-gradient(135deg, var(--green-dark), var(--navy));
+      color: var(--white);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      margin: 1rem 0;
+    }
+    
+    .revenue-path .before-after {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .revenue-path .before, .revenue-path .after {
+      text-align: center;
+    }
+    
+    .revenue-path .amount {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    
+    .revenue-path .after .amount {
+      color: var(--gold);
+    }
+    
+    .revenue-path .arrow {
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+    
+    .revenue-path .increase {
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 1.1rem;
+    }
+    
+    .revenue-path .increase strong {
+      color: var(--gold);
+    }
+    
+    /* Phase timeline */
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--green-dark);
+      border-radius: 3px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.75rem;
+      top: 0.25rem;
+      width: 1rem;
+      height: 1rem;
+      background: var(--green-dark);
+      border-radius: 50%;
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 3px var(--green-dark);
+    }
+    
+    .timeline-item h4 {
+      margin-top: 0;
+      color: var(--green-dark);
+    }
+    
+    .timeline-item .duration {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Questions section */
+    .questions-list {
+      counter-reset: question;
+    }
+    
+    .question-item {
+      counter-increment: question;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: rgba(123,63,160,0.05);
+      border-radius: 0.5rem;
+      border-left: 3px solid var(--purple);
+    }
+    
+    .question-item::before {
+      content: counter(question) ". ";
+      font-weight: 700;
+      color: var(--purple);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--gray-light);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+    
+    footer strong {
+      color: var(--green-dark);
+    }
+    
+    /* Responsive adjustments */
+    @media (min-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+      .revenue-path .before-after { padding: 0 2rem; }
+    }
+    
+    /* Print styles */
+    @media print {
+      .section-nav { display: none; }
+      body { background: white; }
+      .container { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>JW Golf Website Redesign</h1>
+      <p class="subtitle">Business Development Plan for James Whittaker, PGA Professional</p>
+      <p class="meta">Version 1.0 | 30 March 2026 | Prepared for Adam Box</p>
+    </header>
+    
+    <div class="executive-summary">
+      <h2>Executive Summary</h2>
+      
+      <p>James has <strong>three extraordinary differentiators</strong> currently buried or absent from his website:</p>
+      
+      <div class="key-differentiators">
+        <div class="differentiator">
+          <strong>The Resilience Story</strong>
+          5 brain surgeries for epilepsy — a testament to mental toughness that translates directly to coaching
+        </div>
+        <div class="differentiator">
+          <strong>The Philosophy</strong>
+          "One Clear Fix" — simplicity in a world of golf instruction overload
+        </div>
+        <div class="differentiator">
+          <strong>The Credibility</strong>
+          50+ European Tour pros fitted, Titleist Ambassador, published writer
+        </div>
+      </div>
+      
+      <div class="impact-goal">
+        <strong>Business Impact Goal:</strong> Move from £40-60/hour coaching to £100+/hour premium positioning, build recurring revenue through online coaching subscriptions, and establish passive income through digital products.
+      </div>
+    </div>
+    
+    <nav class="section-nav">
+      <h3>Jump to Section</h3>
+      <div class="nav-links">
+        <a href="#brand">Brand</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#design">Design</a>
+        <a href="#hosting">Hosting</a>
+        <a href="#promotion">Promotion</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#questions">Questions</a>
+        <a href="#competitors">Competitors</a>
+        <a href="#revenue">Revenue</a>
+      </div>
+    </nav>
+    
+    <main>
+      <!-- Section 1: Brand Positioning -->
+      <section id="brand">
+        <h2>1. Brand Positioning</h2>
+        
+        <h3>The Core Story: "Resilience Through Clarity"</h3>
+        
+        <div class="callout important">
+          <strong>The Narrative Arc</strong>
+          James faced life-threatening epilepsy requiring 5 brain surgeries. He learned that recovery happens one step at a time — one day, one exercise, one victory. He applies this to golf: you don't need 20 swing thoughts, you need ONE clear fix. His coaching is trauma-informed, patient, and focused on progress over perfection.
+        </div>
+        
+        <h4>Why This Works Authentically</h4>
+        <ul>
+          <li>The epilepsy story demonstrates <strong>mental resilience</strong> — the #1 skill in golf</li>
+          <li>It shows he's overcome adversity most people can't imagine</li>
+          <li>It positions him as someone who understands struggle and incremental progress</li>
+          <li>It's inspiring without being self-pitying</li>
+          <li>It differentiates him from every other "PGA Professional" in Yorkshire</li>
+        </ul>
+        
+        <h3>Brand Pillars</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Pillar</th>
+              <th>Expression</th>
+              <th>Proof Point</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Resilience</strong></td>
+              <td>"I've faced brain surgery 5 times. Your slice doesn't scare me."</td>
+              <td>Epilepsy journey, recovery story</td>
+            </tr>
+            <tr>
+              <td><strong>Clarity</strong></td>
+              <td>"One thing to fix. Not twenty."</td>
+              <td>"One Clear Fix" methodology</td>
+            </tr>
+            <tr>
+              <td><strong>Credibility</strong></td>
+              <td>"The pro the pros trust."</td>
+              <td>50+ Tour pros fitted, Titleist Ambassador</td>
+            </tr>
+            <tr>
+              <td><strong>Accessibility</strong></td>
+              <td>"Tour-level insight for every golfer."</td>
+              <td>Leeds & District Head Coach, all skill levels</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>Tagline Options</h3>
+        <ol>
+          <li><strong>Primary:</strong> "One Clear Fix at a Time"</li>
+          <li><strong>Alternative:</strong> "The Resilient Coach"</li>
+          <li><strong>Contextual:</strong> "Tour-Level Insight. Yorkshire Grit."</li>
+          <li><strong>Short:</strong> "Fix Your Game. Simply."</li>
+        </ol>
+      </section>
+      
+      <!-- Section 2: Site Architecture -->
+      <section id="architecture">
+        <h2>2. Site Architecture & Content</h2>
+        
+        <h3>New Sitemap</h3>
+        <ul>
+          <li><strong>Homepage</strong></li>
+          <li>The One Clear Fix Method (About/Philosophy)</li>
+          <li>Coaching Services
+            <ul>
+              <li>In-Person Lessons (Leeds)</li>
+              <li>Online Coaching</li>
+              <li>Custom Fitting</li>
+              <li>Playing Lessons</li>
+            </ul>
+          </li>
+          <li>The Resilience Story (About James)</li>
+          <li>Success Stories (Testimonials)</li>
+          <li>Free Resources (Lead Magnets)</li>
+          <li>Book Now</li>
+          <li>Contact</li>
+        </ul>
+        
+        <h3>Homepage Hero Section</h3>
+        <div class="callout">
+          <strong>Headline:</strong> "Your Golf Game Is One Clear Fix Away"<br>
+          <strong>Subhead:</strong> "James Whittaker, PGA Professional. 5 brain surgeries. 50+ Tour pros fitted. Leeds & District Head Coach."<br>
+          <strong>Primary CTA:</strong> "Book Your Assessment"<br>
+          <strong>Secondary CTA:</strong> "Hear My Story"
+        </div>
+        
+        <h3>Social Proof Bar</h3>
+        <ul>
+          <li>"Trusted by 50+ European Tour Professionals"</li>
+          <li>"Titleist Team Ambassador"</li>
+          <li>"Leeds & District Union Head Coach"</li>
+          <li>"Featured in Today's Golfer, National Club Golfer"</li>
+        </ul>
+        
+        <h3>Lead Capture Strategy</h3>
+        <ol>
+          <li><strong>Free Swing Assessment</strong> — Upload video, get ONE clear fix</li>
+          <li><strong>The One-Fix Newsletter</strong> — Weekly actionable tip</li>
+          <li><strong>Lead Magnet PDF</strong> — "5 Most Common Swing Faults (And the One Fix for Each)"</li>
+          <li><strong>Exit-Intent Popup</strong> — Capture abandoning visitors</li>
+        </ol>
+      </section>
+      
+      <!-- Section 3: Visual Design -->
+      <section id="design">
+        <h2>3. Visual & Technical Design</h2>
+        
+        <h3>Design Direction</h3>
+        <p><strong>Aesthetic:</strong> Modern, clean, premium but accessible</p>
+        <ul>
+          <li><strong>Not:</strong> Corporate golf brand sterility</li>
+          <li><strong>Not:</strong> Overly trendy/aggressive</li>
+          <li><strong>Yes:</strong> Warm, confident, professional with personality</li>
+        </ul>
+        
+        <h3>Colour Palette</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Colour</th>
+              <th>Hex</th>
+              <th>Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Deep Green</td>
+              <td>#1B4332</td>
+              <td>Primary actions, golf course, growth</td>
+            </tr>
+            <tr>
+              <td>Rich Navy</td>
+              <td>#1A365D</td>
+              <td>Professional, trustworthy, premium</td>
+            </tr>
+            <tr>
+              <td>Warm Cream</td>
+              <td>#F5F5DC</td>
+              <td>Backgrounds, approachable</td>
+            </tr>
+            <tr>
+              <td>Epilepsy Purple</td>
+              <td>#7B3FA0</td>
+              <td>Subtle accent (use sparingly)</td>
+            </tr>
+            <tr>
+              <td>Gold</td>
+              <td>#C9A227</td>
+              <td>Premium touch, success</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>Performance Targets</h3>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="number">&lt;2.5s</div>
+            <div class="label">Largest Contentful Paint</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">&lt;100ms</div>
+            <div class="label">First Input Delay</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">&lt;0.1</div>
+            <div class="label">Cumulative Layout Shift</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">90+</div>
+            <div class="label">Lighthouse Score</div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section 4: Hosting -->
+      <section id="hosting">
+        <h2>4. Hosting & Tech Stack</h2>
+        
+        <h3>Recommended Stack</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Recommendation</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hosting</td>
+              <td><strong>Vercel Pro</strong> — modern, fast, global CDN</td>
+              <td>£16/month</td>
+            </tr>
+            <tr>
+              <td>Booking</td>
+              <td><strong>Calendly</strong> — familiar, embeddable</td>
+              <td>Free / £8/month</td>
+            </tr>
+            <tr>
+              <td>Email Marketing</td>
+              <td><strong>ConvertKit</strong> — best for creators</td>
+              <td>Free up to 1k</td>
+            </tr>
+            <tr>
+              <td>CMS</td>
+              <td><strong>Static initially</strong>, migrate to Sanity if needed</td>
+              <td>£0 / £99/month</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="callout important">
+          <strong>Start simple:</strong> Static site with hardcoded content. If James needs frequent updates, migrate to a headless CMS like Sanity or Contentful.
+        </div>
+      </section>
+      
+      <!-- Section 5: Promotional Strategy -->
+      <section id="promotion">
+        <h2>5. Promotional Strategy</h2>
+        
+        <h3>Social Media Content Pillars</h3>
+        <ol>
+          <li><strong>One Clear Fix (Educational)</strong> — Weekly swing tip video, 60 seconds</li>
+          <li><strong>The Resilience Story (Inspirational)</strong> — Epilepsy awareness, mental game</li>
+          <li><strong>Behind the Scenes (Authentic)</strong> — Day in the life, coaching sessions</li>
+          <li><strong>Social Proof (Trust)</strong> — Client success, handicap improvements</li>
+          <li><strong>Community (Engagement)</strong> — Q&A sessions, polls</li>
+        </ol>
+        
+        <h3>YouTube Strategy</h3>
+        <p>Channel: <strong>"One Clear Fix Golf"</strong></p>
+        <ul>
+          <li>"One Fix" Series — Weekly 5-10 min breakdowns</li>
+          <li>"Fitted by the Pros" — Equipment from a fitter's perspective</li>
+          <li>"The Resilient Golfer" — Mental game content (monthly)</li>
+          <li>"Leeds Golf" — Local course reviews</li>
+        </ul>
+        
+        <h3>Local SEO</h3>
+        <p><strong>Target Keywords:</strong></p>
+        <ul>
+          <li>Golf lessons Leeds</li>
+          <li>Golf coach Yorkshire</li>
+          <li>Custom fitting Leeds</li>
+          <li>Trackman fitting Yorkshire</li>
+        </ul>
+        
+        <h3>Epilepsy Charity Partnership</h3>
+        <ul>
+          <li><strong>Epilepsy Society</strong> — potential ambassador role</li>
+          <li><strong>Purple Day (March 26)</strong> — annual awareness campaign</li>
+          <li>Donation: Portion of online coaching revenue</li>
+          <li>This provides permission structure for telling his story</li>
+        </ul>
+      </section>
+      
+      <!-- Section 6: Implementation Roadmap -->
+      <section id="roadmap">
+        <h2>6. Implementation Roadmap</h2>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Phase 1: Quick Wins</h4>
+            <p class="duration">Weeks 1-2 | £0-100</p>
+            <ul>
+              <li>Rewrite homepage headline to "One Clear Fix" positioning</li>
+              <li>Add epilepsy story to About page (if approved)</li>
+              <li>Update meta titles/descriptions for SEO</li>
+              <li>Add structured data for LocalBusiness</li>
+              <li>Set up Calendly booking integration</li>
+              <li>Add "50+ Tour pros fitted" social proof</li>
+              <li>Claim Google Business Profile</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <h4>Phase 2: Prototype Site</h4>
+            <p class="duration">Weeks 3-6 | £0-500</p>
+            <ul>
+              <li>Finalize brand positioning and copy</li>
+              <li>Design logo concepts (3 options)</li>
+              <li>Build static site (Next.js or Astro)</li>
+              <li>Create all service pages with benefit-led copy</li>
+              <li>Build lead capture forms</li>
+              <li>Integrate Calendly</li>
+              <li>Deploy to Vercel (free tier)</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <h4>Phase 3: Full Redesign</h4>
+            <p class="duration">Weeks 7-10 | £1,000-3,000</p>
+            <ul>
+              <li>Finalize and implement logo</li>
+              <li>Professional photography</li>
+              <li>Video production (hero, testimonials)</li>
+              <li>Custom booking system (if needed)</li>
+              <li>Email automation setup (ConvertKit)</li>
+              <li>Launch on custom domain with premium hosting</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <h4>Phase 4: Marketing Launch</h4>
+            <p class="duration">Weeks 11-14 | £500-1,500/month</p>
+            <ul>
+              <li>YouTube channel launch</li>
+              <li>Social media content calendar</li>
+              <li>Paid advertising test (Google, Facebook)</li>
+              <li>Email list building campaign</li>
+              <li>PR outreach (golf publications)</li>
+              <li>Online coaching subscription launch</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h3>Total Investment</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Duration</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Quick Wins</td>
+              <td>Weeks 1-2</td>
+              <td>£0-100</td>
+            </tr>
+            <tr>
+              <td>2. Prototype</td>
+              <td>Weeks 3-6</td>
+              <td>£0-500</td>
+            </tr>
+            <tr>
+              <td>3. Full Redesign</td>
+              <td>Weeks 7-10</td>
+              <td>£1,000-3,000</td>
+            </tr>
+            <tr>
+              <td>4. Marketing Launch</td>
+              <td>Weeks 11-14</td>
+              <td>£500-1,500/mo</td>
+            </tr>
+            <tr>
+              <td><strong>Total (14 weeks)</strong></td>
+              <td></td>
+              <td><strong>£1,500-5,100</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Section 7: Questions -->
+      <section id="questions">
+        <h2>7. Questions for James</h2>
+        
+        <p>To proceed effectively, we need answers to the following:</p>
+        
+        <h3>Business Goals</h3>
+        <div class="questions-list">
+          <div class="question-item">What is the primary business goal? (More lessons, higher-value clients, online coaching, digital products, or all of the above?)</div>
+          <div class="question-item">What is the current monthly revenue baseline?</div>
+          <div class="question-item">What is the target monthly revenue in 12 months?</div>
+        </div>
+        
+        <h3>Budget & Resources</h3>
+        <div class="questions-list">
+          <div class="question-item">What is the total budget available for this project?</div>
+          <div class="question-item">Does James have existing brand assets? (Photos, video, testimonials)</div>
+          <div class="question-item">Who will manage the website ongoing?</div>
+        </div>
+        
+        <h3>The Epilepsy Story</h3>
+        <div class="questions-list">
+          <div class="question-item">How comfortable is James with sharing his epilepsy journey publicly? (Full story, brief mention, or not at all? This is critical — the brand pivots on this)</div>
+          <div class="question-item">Has he connected with epilepsy charities before?</div>
+        </div>
+        
+        <h3>Immediate Priorities</h3>
+        <div class="questions-list">
+          <div class="question-item">What is the timeline pressure? Is there a specific launch date?</div>
+          <div class="question-item">What is the biggest pain point right now? (Not enough leads, leads not converting, pricing pressure, no online presence?)</div>
+        </div>
+      </section>
+      
+      <!-- Section 8: Competitors -->
+      <section id="competitors">
+        <h2>8. Competitor Analysis</h2>
+        
+        <h3>What Top UK Golf Coaches Are Doing</h3>
+        
+        <h4>Mark Crossfield</h4>
+        <ul>
+          <li><strong>Model:</strong> Freemium → Paid courses → Membership</li>
+          <li><strong>Differentiation:</strong> "Real instruction, no gimmicks"</li>
+          <li><strong>Revenue:</strong> Courses, membership, affiliate commissions</li>
+        </ul>
+        
+        <h4>Me and My Golf</h4>
+        <ul>
+          <li><strong>Model:</strong> Subscription tiers (Core £10.75/mo, VIP £54/mo)</li>
+          <li><strong>Differentiation:</strong> Structured coaching plans, community</li>
+          <li><strong>Revenue:</strong> Subscriptions, partnerships, merchandise</li>
+        </ul>
+        
+        <h4>Rick Shiels</h4>
+        <ul>
+          <li><strong>Model:</strong> YouTube ad revenue + sponsorships</li>
+          <li><strong>Differentiation:</strong> Personality-driven, equipment reviews</li>
+          <li><strong>Revenue:</strong> YouTube, brand deals, golf stores</li>
+        </ul>
+        
+        <div class="callout important">
+          <strong>Key Insight:</strong> None of the major UK coaches are telling a personal resilience story. James's epilepsy journey is a completely unique differentiator in a crowded market.
+        </div>
+        
+        <h3>James's Competitive Advantage</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Competitor</th>
+              <th>Their Angle</th>
+              <th>James's Counter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mark Crossfield</td>
+              <td>"No gimmicks" instruction</td>
+              <td>"One Clear Fix" — simplicity with structure</td>
+            </tr>
+            <tr>
+              <td>Me and My Golf</td>
+              <td>Structured plans</td>
+              <td>Personal attention + resilience story</td>
+            </tr>
+            <tr>
+              <td>Rick Shiels</td>
+              <td>Entertainment</td>
+              <td>Authentic transformation story</td>
+            </tr>
+            <tr>
+              <td>Local coaches</td>
+              <td>Generic coaching</td>
+              <td>Tour-level credibility + unique story</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Section 9: Revenue -->
+      <section id="revenue">
+        <h2>9. Revenue Model Projections</h2>
+        
+        <h3>Current State (Estimated)</h3>
+        <ul>
+          <li>In-person lessons: £50/hour × 20 hours/week × 40 weeks = <strong>£40,000/year</strong></li>
+          <li>Custom fitting: Minimal (included in lessons)</li>
+          <li>Online coaching: £0</li>
+        </ul>
+        
+        <div class="revenue-path">
+          <div class="before-after">
+            <div class="before">
+              <div class="label">Current</div>
+              <div class="amount">£40k</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="after">
+              <div class="label">Phase 4 Target</div>
+              <div class="amount">£156k</div>
+            </div>
+          </div>
+          <div class="increase">
+            <strong>Revenue Increase: 290%</strong>
+          </div>
+        </div>
+        
+        <h3>Phase 4 Target Breakdown (12 months)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Revenue Stream</th>
+              <th>Calculation</th>
+              <th>Annual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>In-person lessons</td>
+              <td>£80/hr × 25 hrs × 40 weeks</td>
+              <td>£80,000</td>
+            </tr>
+            <tr>
+              <td>Premium packages</td>
+              <td>£400 × 50 clients</td>
+              <td>£20,000</td>
+            </tr>
+            <tr>
+              <td>Custom fitting</td>
+              <td>£100 × 100 sessions</td>
+              <td>£10,000</td>
+            </tr>
+            <tr>
+              <td>Online coaching subscriptions</td>
+              <td>£30/mo × 100 subscribers</td>
+              <td>£36,000</td>
+            </tr>
+            <tr>
+              <td>Digital products</td>
+              <td>£50 × 200 sales</td>
+              <td>£10,000</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td></td>
+              <td><strong>£156,000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>Path to Wealth</h3>
+        <div class="callout">
+          <strong>The goal isn't just more lessons — it's building assets that generate income without trading time:</strong>
+          <ol>
+            <li><strong>Year 1:</strong> Establish brand, build email list, launch online coaching</li>
+            <li><strong>Year 2:</strong> Scale online coaching to 500+ subscribers, launch digital courses</li>
+            <li><strong>Year 3:</strong> Passive income exceeds active coaching income</li>
+            <li><strong>Year 4:</strong> Choose — scale to team of coaches, or maintain lifestyle business</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+    
+    <footer>
+      <p>Document prepared by <strong>Bee</strong> for Adam Box</p>
+      <p>JW Golf Business Development Plan v1.0 | 30 March 2026</p>
+    </footer>
+  </div>
+</body>
+</html>

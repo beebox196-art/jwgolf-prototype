@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 import { ReactNode } from "react";
 
 const inter = Inter({
@@ -27,11 +28,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
-        <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/5">
+        <nav className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-white/5">
           <div className="section-container">
             <div className="flex items-center justify-between py-4 md:py-6">
-              <Link href="/" className="flex items-center gap-2">
-                <span className="text-2xl md:text-3xl font-bold gold-gradient-text">JW Golf</span>
+              <Link href="/" className="flex items-center gap-3">
+                <Image
+                  src="/images/logo.gif"
+                  alt="James Whittaker Golf Logo"
+                  width={120}
+                  height={40}
+                  className="h-10 md:h-12 object-contain"
+                  unoptimized
+                />
               </Link>
 
               <div className="hidden md:flex items-center gap-8">

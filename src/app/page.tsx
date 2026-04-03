@@ -6,9 +6,15 @@ export default function Home() {
     <div className="flex-1 flex-col">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/globe.svg')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f0f] via-[#1a365d] to-[#1b4332]" />
-        <div className="absolute inset-0 opacity-20">
+        <Image
+          src="/images/banner-primary.png"
+          alt="James Whittaker Golf - One Clear Fix"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-[#0a1a2f]/70 to-[#1b4332]/60" />
+        <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
             <defs>
               <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
