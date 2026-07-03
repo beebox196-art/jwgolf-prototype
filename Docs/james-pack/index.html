@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JW Golf — Your New Website Proposal</title>
+  <meta name="description" content="Website redesign proposal for James Whitaker, PGA Professional">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #122019;
+      --cream: #f8f3e8;
+      --paper: #fffdf7;
+      --gold: #d6b35c;
+      --gold-dark: #9b7830;
+      --coaching: #2f8b57;
+      --coaching-light: #e8f5ee;
+      --corporate: #10283a;
+      --corporate-light: #e8eef4;
+      --resilience: #c77760;
+      --resilience-light: #fdf0ec;
+      --sage: #8aa68a;
+      --line: rgba(18,32,25,.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 64px 0 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      background: rgba(214,179,92,.12);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: Playfair Display, Georgia, serif;
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: rgba(18,32,25,.65);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Section */
+    .section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-family: Playfair Display, Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      font-size: 15px;
+      color: rgba(18,32,25,.7);
+      margin-bottom: 16px;
+    }
+
+    /* Problem */
+    .problem-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 16px 0;
+    }
+
+    .problem-box p {
+      margin-bottom: 8px;
+    }
+
+    .problem-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .crossed {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+
+    /* Three Pathways */
+    .pathway {
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin: 16px 0;
+      position: relative;
+    }
+
+    .pathway-coaching {
+      background: var(--coaching-light);
+      border: 1px solid rgba(47,139,87,.2);
+    }
+
+    .pathway-corporate {
+      background: var(--corporate-light);
+      border: 1px solid rgba(16,40,58,.15);
+    }
+
+    .pathway-resilience {
+      background: var(--resilience-light);
+      border: 1px solid rgba(199,119,96,.2);
+    }
+
+    .pathway-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .pathway-coaching .pathway-tag {
+      background: var(--coaching);
+      color: #fff;
+    }
+
+    .pathway-corporate .pathway-tag {
+      background: var(--corporate);
+      color: #fff;
+    }
+
+    .pathway-resilience .pathway-tag {
+      background: var(--resilience);
+      color: #fff;
+    }
+
+    .pathway h3 {
+      font-family: Playfair Display, Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .pathway p {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .pathway ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+    }
+
+    .pathway li {
+      font-size: 13px;
+      color: rgba(18,32,25,.65);
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .pathway li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      font-size: 11px;
+    }
+
+    /* Cost Table */
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .cost-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: rgba(18,32,25,.5);
+      padding: 10px 12px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .cost-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cost-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .savings {
+      background: rgba(47,139,87,.08);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin: 16px 0;
+    }
+
+    .savings .amount {
+      font-family: Playfair Display, Georgia, serif;
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--coaching);
+    }
+
+    .savings .label {
+      font-size: 14px;
+      color: rgba(18,32,25,.6);
+      margin-top: 4px;
+    }
+
+    /* CTA */
+    .cta-box {
+      background: linear-gradient(135deg, var(--ink) 0%, #1a3328 100%);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      margin: 24px 0;
+    }
+
+    .cta-box h2 {
+      font-family: Playfair Display, Georgia, serif;
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,.7);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .cta-button:hover {
+      background: var(--gold-dark);
+      color: #fff;
+    }
+
+    .cta-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,.45);
+      margin-top: 12px;
+    }
+
+    /* Steps */
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 14px 0 14px 44px;
+      font-size: 14px;
+      color: rgba(18,32,25,.75);
+      border-left: 2px solid var(--line);
+      margin-left: 14px;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: -14px;
+      top: 12px;
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .steps li:last-child {
+      border-left-color: transparent;
+    }
+
+    .steps strong {
+      color: var(--ink);
+    }
+
+    /* FAQ */
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      color: rgba(18,32,25,.65);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 32px 0;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(18,32,25,.35);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 28px; }
+      .section h2 { font-size: 24px; }
+      .savings .amount { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-badge">Proposal for James</div>
+      <h1>Your website,<br>working harder for you</h1>
+      <p>Three pathways. One brand. Every visitor finds exactly what they're looking for within seconds.</p>
+    </div>
+
+    <!-- The Problem -->
+    <div class="section">
+      <div class="section-label">The situation</div>
+      <h2>Right now, you have no website</h2>
+      <p>When you stopped paying SBB's £350/year, they took the site down. That's not great — but it's also an opportunity. Because now we can build something that actually works for you.</p>
+      <div class="problem-box">
+        <p><span class="crossed">£350/year to SBB for hosting + builder + SSL</span></p>
+        <p><span class="crossed">Generic website that tries to speak to everyone</span></p>
+        <p><span class="crossed">No clear path for different visitors to find what they need</span></p>
+        <p style="color: var(--coaching); font-weight: 600; margin-top: 8px;">→ Let's fix all of that.</p>
+      </div>
+    </div>
+
+    <!-- Three Pathways -->
+    <div class="section">
+      <div class="section-label">The solution</div>
+      <h2>One website, three ways in</h2>
+      <p>When someone lands on your site, they see three clear options — like flags on a scorecard. They tap the one that's relevant to them and land on a page that speaks directly to their needs.</p>
+
+      <div class="pathway pathway-coaching">
+        <div class="pathway-tag">Coaching</div>
+        <h3>"Fix my golf"</h3>
+        <p>For golfers who want to improve. They see your coaching method, your credentials, and can book a lesson immediately.</p>
+        <ul>
+          <li>One Clear Fix methodology front and centre</li>
+          <li>Packages with clear pricing</li>
+          <li>PGA credentials and tour pro experience</li>
+          <li>Direct booking — no friction</li>
+        </ul>
+      </div>
+
+      <div class="pathway pathway-corporate">
+        <div class="pathway-tag">Corporate</div>
+        <h3>"Host a golf day"</h3>
+        <p>For companies and event organisers. They see professional packages, formats, and can enquire about booking you for their event.</p>
+        <ul>
+          <li>Structured event packages with clear outcomes</li>
+          <li>Professional credibility and PGA authority</li>
+          <li>Downloadable one-pager for decision makers</li>
+          <li>Simple enquiry form — no phone tag</li>
+        </ul>
+      </div>
+
+      <div class="pathway pathway-resilience">
+        <div class="pathway-tag">Resilience</div>
+        <h3>"Hear James's story"</h3>
+        <p>For people inspired by resilience and wellbeing through golf. They find a powerful human story and can invite you to speak.</p>
+        <ul>
+          <li>Your epilepsy journey told with depth and care</li>
+          <li>Speaking and workshop formats</li>
+          <li>Authenticity and credibility — not a marketing angle</li>
+          <li>Invitation CTA for events, podcasts, and charities</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Visual Identity -->
+    <div class="section">
+      <div class="section-label">Design approach</div>
+      <h2>One brand, three lighting states</h2>
+      <p>Same logo, same typography, same James. But each pathway has its own colour temperature and feel — so coaching pages feel energetic, corporate pages feel polished, and resilience pages feel warm and human.</p>
+      <p><strong style="color: var(--coaching);">Coaching</strong> — fresh greens, white, performance data<br>
+      <strong style="color: var(--corporate);">Corporate</strong> — deep navy, warm metallic, structured packages<br>
+      <strong style="color: var(--resilience);">Resilience</strong> — soft neutrals, sage, editorial photography</p>
+      <p>Each audience feels like the site was built for them. But it's all one site, one domain, one place to maintain.</p>
+    </div>
+
+    <!-- Why This Works -->
+    <div class="section">
+      <div class="section-label">Why this works</div>
+      <h2>Your story connects everything</h2>
+      <p>The three audiences overlap more than you'd think:</p>
+      <ul style="list-style: none; padding: 0; margin: 12px 0;">
+        <li style="padding: 6px 0; font-size: 14px;">🏌️ <strong>Corporate clients</strong> want the resilience angle for events — it makes their day more memorable</li>
+        <li style="padding: 6px 0; font-size: 14px;">⛳ <strong>Golfers</strong> respond emotionally to your story — it builds instant trust and differentiation</li>
+        <li style="padding: 6px 0; font-size: 14px;">💛 <strong>Wellbeing audiences</strong> discover your PGA credentials and realise you're the real deal</li>
+      </ul>
+      <p>One site lets these audiences discover each other naturally. Three separate sites wouldn't.</p>
+    </div>
+
+    <!-- Three Strengths -->
+    <div class="section">
+      <div class="section-label">Your three strengths</div>
+      <h2>Where your value really sits</h2>
+      <p>Plenty of golf professionals can teach a lesson. Plenty of coaches have PGA credentials. But there's only one person who can combine elite coaching, a corporate presence, and a story like yours. That's worth thinking about when deciding where to put your energy.</p>
+
+      <div style="margin: 20px 0;">
+        <div style="background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 12px;">
+          <div style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--coaching); margin-bottom: 8px;">Strength one</div>
+          <div style="font-family: Playfair Display, Georgia, serif; font-size: 18px; font-weight: 700; margin-bottom: 4px;">Your coaching</div>
+          <div style="font-size: 14px; color: rgba(18,32,25,.6);">One Clear Fix. 50+ tour pros coached. PGA Head Coach at Leeds. This is what you do every day — and you're excellent at it. The website makes sure people can find you and book you.</div>
+        </div>
+
+        <div style="background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 12px;">
+          <div style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--corporate); margin-bottom: 8px;">Strength two</div>
+          <div style="font-family: Playfair Display, Georgia, serif; font-size: 18px; font-weight: 700; margin-bottom: 4px;">Your corporate presence</div>
+          <div style="font-size: 14px; color: rgba(18,32,25,.6);">A professional who can run a corporate golf day, deliver handicap assessments, and give 20 people a memorable experience. This is a solid income stream that most pros don't even pursue.</div>
+        </div>
+
+        <div style="background: var(--resilience-light); border: 2px solid rgba(199,119,96,.3); border-radius: 12px; padding: 20px; position: relative;">
+          <div style="position: absolute; top: -10px; right: 16px; background: var(--resilience); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">This is what nobody else has</div>
+          <div style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--resilience); margin-bottom: 8px; margin-top: 4px;">Strength three</div>
+          <div style="font-family: Playfair Display, Georgia, serif; font-size: 18px; font-weight: 700; margin-bottom: 4px;">Your story</div>
+          <div style="font-size: 14px; color: rgba(18,32,25,.65);">Five brain surgeries. Epilepsy. And you kept going. This isn't a marketing angle — it's who you are. And it's the thing that makes you genuinely different from every other golf professional in the country. The right people need to find this. The website makes sure they do.</div>
+        </div>
+      </div>
+
+      <p>The site doesn't tell you what to focus on — it reflects back what's already there. Three clear paths for three things you already do brilliantly. How much energy goes where is always your call.</p>
+    </div>
+
+    <!-- Cost Comparison -->
+    <div class="section">
+      <div class="section-label">Costs</div>
+      <h2>You save money from day one</h2>
+      <table class="cost-table">
+        <tr>
+          <th>Item</th>
+          <th>Before</th>
+          <th>Now</th>
+        </tr>
+        <tr>
+          <td>Hosting + builder + SSL</td>
+          <td>£350/yr (SBB)</td>
+          <td>£0 (included)</td>
+        </tr>
+        <tr>
+          <td>Domain (jwgolf.co.uk)</td>
+          <td>£18/yr</td>
+          <td>£18/yr</td>
+        </tr>
+        <tr>
+          <td>SSL certificate</td>
+          <td>"Included" in SBB</td>
+          <td>Free (included)</td>
+        </tr>
+        <tr style="font-weight: 700;">
+          <td>Total</td>
+          <td>£368/year</td>
+          <td>£18/year</td>
+        </tr>
+      </table>
+
+      <div class="savings">
+        <div class="amount">£350/year</div>
+        <div class="label">saved on hosting alone — before any arrangement we agree for our work</div>
+      </div>
+    </div>
+
+    <!-- What Happens Next -->
+    <div class="section">
+      <div class="section-label">Next steps</div>
+      <h2>How we take this forward</h2>
+      <ol class="steps">
+        <li><strong>You look at the prototype</strong> — tap through it, see how it feels</li>
+        <li><strong>We discuss what you think</strong> — what works, what doesn't, what's missing</li>
+        <li><strong>We agree a direction</strong> — any tweaks before we build it properly</li>
+        <li><strong>We handle the technical side</strong> — hosting, DNS, everything</li>
+        <li><strong>Your new site goes live</strong> — and you never pay SBB again</li>
+      </ol>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <h2>See it for yourself</h2>
+      <p>Tap below to explore the live prototype — the homepage, the three pathways, and how each audience experiences the site.</p>
+      <a href="https://jwgolf-pathways.vercel.app" class="cta-button" target="_blank">View the prototype →</a>
+      <div class="cta-sub">Works on your phone — tap through the three pathways</div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section">
+      <div class="section-label">Questions</div>
+      <h2>Things you might be wondering</h2>
+
+      <div class="faq-item">
+        <h4>What about my current site?</h4>
+        <p>Your old site is already down. All your content is safely saved — nothing gets lost. We build the new one, switch the domain, and you're live.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>What if I want to change things?</h4>
+        <p>Everything is flexible. The three pathways can evolve with you. If resilience speaking takes off, we expand that section. If corporate grows, we add more there. The structure adapts.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How much input do I need to give?</h4>
+        <p>As much or as little as you want. We can draft content for you to approve, or you write it yourself. We handle all the technical side.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is my domain safe?</h4>
+        <p>Yes. Your domain (jwgolf.co.uk) is registered with Custom Micros, not SBB. It's yours regardless. Your email is separate too — nothing is tied to SBB.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>What does it cost me?</h4>
+        <p>That's something we'll discuss together. The hosting savings alone (£350/year) are significant. We'll find a model that works for you.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Prepared by Adam Box & Bee — May 2026</p>
+      <p>Prototype: <a href="https://jwgolf-pathways.vercel.app" style="color: var(--gold-dark);">jwgolf-pathways.vercel.app</a></p>
+    </div>
+
+  </div>
+</body>
+</html>
