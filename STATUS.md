@@ -1,148 +1,111 @@
 # JWGolf Project Status
 
 ## Stage
-planning
-
-
----
-
-## Current Status: RE-ENGAGED — JAMES BACK IN TOUCH
-
-James has been back in touch. Project paused since late April, now slated for revisit week commencing 2 Jun 2026.
-
-Previously proposed: 3-agent OpenClaw setup on Mac Mini, £60/mo model plan. Outstanding items (Mac Mini specs, MS365 app password, social media access, booking system preference) still pending — will reconfirm with James.
+active — re-engaged & delivering (12 Aug 2026)
 
 ---
 
-## Proposed Model Setup (£60/mo)
+## Current Status: FULLY RE-ENGAGED — DELIVERING AT PACE
 
-| Tier | Provider | Access | Cost | Role |
-|------|----------|--------|------|------|
-| **Primary** | OpenAI (OAuth) | GPT-4o, o3, etc. | £20/mo | Main agent — reasoning, coordination |
-| **Agents** | Ollama Cloud | GLM-5.1, Kimi 2.6, + local models | £20/mo | Activity Manager + Web/Marketing agent |
-| **Fallback** | DeepSeek API | DeepSeek v3 / R1 / 4 | ~£20 top-up (lasts months) | High-end fallback |
+Project is live and moving fast. James met Adam on 12 Aug 2026 and we're delivering a full professionalisation: website uplift, brand pack, and a 30-day business plan. Multi-agent effort (Bee + Claude + Charlie via AgentDrop).
 
-**Ongoing cost:** £40/mo + occasional DeepSeek top-up
-
-### Agent → Model Mapping
-
-| Agent | Model | Tier |
-|-------|-------|------|
-| **Main agent** | GPT-4o / o3 | OpenAI OAuth |
-| **Activity Manager** | GLM-5.1 | Ollama Cloud |
-| **Web & Marketing** | Kimi 2.6 / GLM-5.1 | Ollama Cloud |
-| **Fallback (any)** | DeepSeek v3 | DeepSeek credits |
-
-Full proposal → `Docs/MODEL-SETUP-PROPOSAL.md`
+**Live prototype:** https://jwgolf-prototype.vercel.app (uplift built, NOT yet deployed — see Deploy Blocker)
 
 ---
 
-## Recent Progress
+## What's Been Delivered (12 Aug 2026)
 
-### 27 April 2026
-- 🆕 **Model setup proposal defined** — 3-tier: OpenAI OAuth + Ollama Cloud + DeepSeek fallback
-- 🆕 **Agent count revised to 3** — Main + Activity Manager + Web & Marketing
-- 📝 Proposal doc created → `Docs/MODEL-SETUP-PROPOSAL.md`
-- ⏳ Awaiting James: Mac Mini specs, MS365 app password, social media access
+### ✅ Website Uplift — BUILT & COMMITTED (not yet live)
+- Commit `1692080` on `main` — "feat: JWGolf uplift — credentials strip, One Clear Fix method, booking CTA, fitting highlight, trimmed effects"
+- Build verified clean (5 static pages, all prerendered)
+- Changes (per Claude's strategy):
+  - **Credentials strip above the fold** — dense factual proof (PGA + Birmingham, Leeds & District Head Coach, Moor Allerton · Howley Hall · Belfry · Oulton Hall, Today's Golfer · Nat Club Golfer · Golfshake, 50+ European Tour pros)
+  - **"One Clear Fix" as a method** — Diagnose → One Clear Fix → Measurable Marker → Practise Until Next Time
+  - **Booking friction reduced** — phone (tap-to-call) + email in header on every page, mobile Call/Book buttons
+  - **Free Custom Fitting highlight** — dedicated section on lessons page
+  - **Effects trimmed ~a third** — premium is spare
+  - **Resilience understated** — one line in James's voice on homepage, full story on About
+- **Static export packaged** for James to review locally: `jwgolf-uplift-static.zip` (11.2 MB, on Desktop)
 
-### 25 April 2026
-- 🆕 **OpenClaw agent spec written** → `Docs/OPENCLAW-AGENT-SPEC.md`
-- 🆕 Two-agent architecture defined: Activity Manager + Web & Socials
-- ✅ James confirmed Mac Mini incoming, setup next week
-- 📋 Full setup checklist created (13 steps)
+### ✅ Brand Pack — BUILT & SENT TO JAMES
+- One-page premium brand pack (forest green #1F4D3A, gold #C6A96B, cream #F7F5EF, Garamond + Lato)
+- Content blueprint by Claude; design by Bee
+- Structure: Hero ("Your Golf Game Is One Clear Fix Away") → Positioning → Method (See/Fix/Play) → Services → Proof → Story → Contact + brand strip
+- Files: `Docs/Brand-Pack/index.html`, `Whitaker-Golf-Brand-Pack.pdf`, `preview.png`, `assets/`
+- **Emailed to James** (james@jwgolf.co.uk) with PDF attached — 12 Aug 2026
 
-### 23 April 2026
-- 🔄 Mel's design spec for site redesign reviewed
+### ✅ First 30 Days Plan — BUILT & SENT TO JAMES
+- Consolidated from Claude + Charlie's strategy memos
+- Files: `Docs/JWGOLF-FIRST-30-DAYS-PLAN.md`, `Docs/Brand-Pack/first-30-days.html`, `Docs/Brand-Pack/JWGolf-First-30-Days.pdf`
+- **Emailed to James** with PDF attached — 12 Aug 2026
 
-### 9 April 2026
-- 🔄 James has access to an older Mac mini (now confirmed: he's getting his own)
-
-### 3 April 2026
-- ✅ Full site scrape completed (51 pages, 21 blog posts)
-- ✅ Domain ownership verified (UK2 - James owns it, NOT SBB)
-- ✅ Email verified safe (Microsoft 365 - NOT tied to SBB)
-- ✅ Content saved to `/Docs/scraped-content/`
-- ✅ Email sent to James with full analysis and options
-- ✅ Neo rebuilt prototype with real content: https://jwgolf-prototype.vercel.app
-- ✅ Content requirements documented: `CONTENT-NEEDED-FROM-JAMES.md`
-
----
-
-## OpenClaw Agent Architecture
-
-| Agent | Purpose | Priority | Model |
-|-------|---------|----------|-------|
-| **Main Agent** | Business reasoning, coordination, client comms | 🔴 High | GPT-4o / o3 (OpenAI OAuth) |
-| **Activity Manager** | Email triage, booking management, events, calendar, daily briefing | 🔴 High — James's main pain point | GLM-5.1 (Ollama Cloud) |
-| **Web & Marketing** | Website updates, social media scheduling, weekly engagement digest | 🟡 Medium — keeps presence active | Kimi 2.6 (Ollama Cloud) |
-
-**Fallback (any agent):** DeepSeek v3 / R1 / 4 (pay-per-token, ~£20 top-up lasts months)
-
-**Philosophy:** Simple beats comprehensive. Trust before autonomy. Visible value fast.
-
-Full spec → `Docs/OPENCLAW-AGENT-SPEC.md` · Model proposal → `Docs/MODEL-SETUP-PROPOSAL.md`
+### ✅ Emails Sent to James (12 Aug 2026)
+1. **Website uplift + qualifying questions** — testimonials (are Mark/Sarah/Tom real?), photos, Nike/Titleist, pricing, venue, punchline check
+2. **Brand pack** — "have a look tonight" + 3 feedback questions
+3. **First 30 Days plan** — "a plan to grow the business"
 
 ---
 
-## Key Findings
+## Multi-Agent Input (via AgentDrop)
 
-### SBB Invoice Analysis
-- **Amount:** £350/year
-- **Services claimed:** Hosting + site builder licence + support
-- **Actual value:** £0-50/year (Vercel is free, domain is ~£15/year)
-- **Risk of leaving:** NONE — domain, email, content all James's
+| Agent | Contribution | Status |
+|-------|-------------|--------|
+| **Claude** | Website uplift strategy + ChatGPT/moneymaking playbook | ✅ Delivered |
+| **Charlie** | ChatGPT 4-job framework + 30-day execution list | ✅ Delivered (12 Aug, back online) |
+| **Bee** | Coordination, build, brand pack design, emails | ✅ |
 
----
-
-## Pending Items
-
-### Awaiting James (for OpenClaw setup)
-1. Mac Mini arrival and specs
-2. Microsoft 365 app password (email/calendar access)
-3. Social media account access or API keys
-4. Preferred messaging channel for agent interaction
-5. Booking system preference (Calendly vs enquiry form)
-
-### Awaiting James (for website)
-1. Ambassador status (Nike or Titleist?)
-2. High-res headshot and action photos
-3. Pricing confirmation
-4. SBB renewal decision (was due ~9 April — status unclear)
+Strategy memos saved: `Docs/UPLIFT-STRATEGY-CLAUDE-2026-08-12.md`, `Docs/CHATGPT-MONEY-STRATEGY-CLAUDE-2026-08-12.md`
 
 ---
 
-## Project Files
+## ⚠️ Deploy Blocker — NEEDS ADAM
+
+The uplift is built and committed, but **NOT live**. The live site still shows the old build.
+
+**Why:** No Vercel token on this machine; no Cloudflare/Wrangler auth; no `gh` CLI auth. The GitHub push did NOT auto-trigger a Vercel deploy.
+
+**To get it live, one of:**
+- Vercel token (or `vercel login`) → deploy real build to prototype URL
+- Cloudflare API token → deploy static export as Worker/Pages project
+- Adam creates Cloudflare project / enables GitHub Pages → Bee pushes static export
+
+**Fallback already delivered:** static zip for James to review locally.
+
+---
+
+## Pending Items — Awaiting James
+
+1. **Testimonial provenance** — are Mark Thompson, Sarah Johnson, Tom Williams real clients? (flagged as potential placeholder copy — must confirm before launch)
+2. **Photography** — real coaching photos (biggest premium upgrade; stock imagery would undo the work)
+3. **Ambassador status** — Nike (historical, left hardware 2016) vs Titleist (current) — confirm
+4. **Pricing confirmation** — scraped rates vs fitted-tier prices (£250/£150/£120/£100) and online packages (£250/mo, £675) — CONFLICT flagged in code comments
+5. **Venue name + address** — for Contact page venue block (currently placeholder)
+6. **Punchline check** — does "Your Golf Game Is One Clear Fix Away" feel right?
+7. **ChatGPT setup** — James setting up ChatGPT desktop on new MacBook Pro (in progress)
+
+---
+
+## Project Files (key)
 
 | Path | Purpose |
 |------|---------|
-| `/Docs/OPENCLAW-AGENT-SPEC.md` | Full agent architecture, capabilities, setup checklist |
-| `/Docs/MODEL-SETUP-PROPOSAL.md` | Model subscription proposal (OpenAI + Ollama + DeepSeek) |
-| `/Docs/scraped-content/` | All scraped website content |
-| `/Docs/CONTENT-SCRAPE-2026-04-03.md` | Scrape summary analysis |
-| `/Docs/CONTENT-NEEDED-FROM-JAMES.md` | Content requirements list |
-| `/Docs/Design/` | New logo and banners from James |
-| `/Docs/Email From James 03-04-26.rtfd` | SBB invoice email |
-
----
-
-## Live Prototype
-
-**URL:** https://jwgolf-prototype.vercel.app
-
-- New branding integrated
-- Real content from scraped site
-- Placeholders for James's photos
-- Ready for review
+| `STATUS.md` | Canonical live project state (this file) |
+| `Docs/UPLIFT-STRATEGY-CLAUDE-2026-08-12.md` | Website uplift strategy (Claude) |
+| `Docs/CHATGPT-MONEY-STRATEGY-CLAUDE-2026-08-12.md` | ChatGPT + moneymaking strategy (Claude) |
+| `Docs/JWGOLF-FIRST-30-DAYS-PLAN.md` | 30-day business plan (Claude + Charlie) |
+| `Docs/Brand-Pack/` | Brand pack (HTML, PDF, assets) |
+| `Docs/MEL-DESIGN-SPEC-HYBRID.md` | Original design spec (Mel) |
+| `Docs/scraped-content/` | All scraped site content |
+| `Docs/CONTENT-NEEDED-FROM-JAMES.md` | Content requirements list |
 
 ---
 
 ## Next Steps
 
-1. **Week of 27 April:** Set up Mac Mini with OpenClaw when it arrives
-2. **Install Activity Manager agent** — email triage + booking management (priority)
-3. **Install Web & Socials agent** — website + social scheduling
-4. **James walkthrough** — teach him to interact with agents
-5. **Remote access** — Tailscale for Adam to support remotely
+1. **Get deploy access sorted** (Adam) → put uplift live
+2. **Await James's replies** to the 3 emails (testimonials, photos, pricing, venue, punchline)
+3. **Walk James through Week 1** of the 30-day plan (homepage, 3 offers, ChatGPT profile)
+4. **Consolidate Charlie + Claude** into ongoing action plan as James responds
 
 ---
 
@@ -150,13 +113,20 @@ Full spec → `Docs/OPENCLAW-AGENT-SPEC.md` · Model proposal → `Docs/MODEL-SE
 
 - **James Whitaker** — Client, PGA Professional
 - **Adam Box** — Project lead, AI coordination
-- **Bee/Neo** — Development and support
+- **Bee** — Coordination, build, brand pack, emails
+- **Claude / Charlie** — Strategy via AgentDrop
 
 ---
 
 ## Activity Log
-- **2026-05-30T22:14:00** - James back in touch. Project re-engaging, revisit planned week of 2 Jun 2026
-- **2026-04-27T21:55:00** - Model setup proposal added (3-tier: OpenAI OAuth + Ollama Cloud + DeepSeek fallback)
-- **2026-04-25T15:10:00** - OpenClaw agent spec created, STATUS updated for Mac Mini setup
-- **2026-04-09T09:15:43** - Stage changed to "planning"
-- **2026-04-09T09:15:24** - Stage changed to "planning"
+- **2026-08-12T21:28:00** - First 30 Days plan emailed to James (PDF attached)
+- **2026-08-12T21:27:00** - First 30 Days plan built (Claude + Charlie consolidated), committed `d2639a6`
+- **2026-08-12T19:27:00** - Brand pack emailed to James (PDF attached)
+- **2026-08-12T19:21:00** - Brand pack built, committed `1cb38f6`
+- **2026-08-12T18:58:00** - Strategy docs committed `a1b351d`
+- **2026-08-12T18:55:00** - Website uplift committed `1692080` (build verified)
+- **2026-08-12T18:53:00** - Website uplift + qualifying questions emailed to James
+- **2026-08-12T18:52:00** - Claude website strategy received; uplift build started (Q subagent)
+- **2026-08-12T18:29:00** - Claude uplift strategy memo saved `4f467c5`
+- **2026-08-12T17:00:00** - James met Adam; project re-engaged
+- **2026-05-30T22:14:00** - James back in touch (prior re-engagement)
