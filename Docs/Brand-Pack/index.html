@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitaker Golf — Brand Pack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1F4D3A;
+    --green-deep: #16382B;
+    --cream: #F7F5EF;
+    --gold: #C6A96B;
+    --charcoal: #2B2B2B;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--sans);
+    background: var(--green-deep);
+    color: var(--cream);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--green);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  /* ── HERO (owns top third) ── */
+  .hero {
+    position: relative;
+    padding: 56px 64px 72px;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -100px; top: -100px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(198,169,107,0.16) 0%, transparent 70%);
+  }
+  .hero-top { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 2; }
+  .logo { max-width: 190px; }
+  .logo img { width: 100%; height: auto; }
+  .signature {
+    text-align: right;
+    font-family: var(--serif); font-style: italic;
+    font-size: 20px; color: var(--gold);
+    padding-top: 8px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 66px;
+    font-weight: 500;
+    line-height: 1.04;
+    margin: 56px 0 0;
+    position: relative; z-index: 2;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero .deck {
+    font-size: 22px;
+    color: rgba(247,245,239,0.9);
+    margin-top: 18px;
+    position: relative; z-index: 2;
+  }
+  .hero .deck strong { color: #fff; font-weight: 700; }
+
+  /* ── SECTION SYSTEM ── */
+  section { padding: 56px 64px; }
+  .section-head { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
+  .section-head .num {
+    font-family: var(--serif); font-size: 44px; color: var(--gold); line-height: 1;
+  }
+  .section-head .label {
+    font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700;
+  }
+  .swoosh {
+    width: 56px; height: 2px; background: var(--gold);
+    margin-top: 6px;
+  }
+  h2 { font-family: var(--serif); font-size: 36px; font-weight: 500; margin-bottom: 20px; }
+
+  /* ── METHOD ── */
+  .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .method-card {
+    background: rgba(22,56,43,0.5);
+    border: 1px solid rgba(198,169,107,0.22);
+    border-radius: 8px;
+    padding: 28px 26px;
+  }
+  .method-card .num {
+    font-family: var(--serif); font-size: 52px; color: var(--gold); line-height: 1;
+  }
+  .method-card h3 { font-family: var(--serif); font-size: 24px; font-weight: 600; margin: 12px 0 8px; }
+  .method-card p { font-size: 14px; color: rgba(247,245,239,0.78); }
+
+  /* ── SERVICES ── */
+  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .service {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 22px;
+    background: rgba(22,56,43,0.4);
+    border: 1px solid rgba(247,245,239,0.1);
+    border-radius: 6px;
+  }
+  .service .name { font-family: var(--serif); font-size: 21px; font-weight: 600; }
+  .service .desc { font-size: 13px; color: rgba(247,245,239,0.65); }
+  .service .free {
+    border: 1px solid var(--gold); color: var(--gold);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    padding: 4px 12px; border-radius: 20px; text-transform: uppercase;
+    background: transparent;
+  }
+  .fitting-hook {
+    margin-top: 18px;
+    font-family: var(--serif); font-style: italic;
+    font-size: 20px; color: var(--gold);
+  }
+
+  /* ── PROOF (one dense line, charcoal, quiet) ── */
+  .proof {
+    font-size: 13px;
+    color: rgba(247,245,239,0.72);
+    line-height: 1.9;
+    max-width: 100%;
+    letter-spacing: 0.02em;
+  }
+  .proof .dot { color: var(--gold); padding: 0 6px; }
+
+  /* ── STORY ── */
+  .story {
+    background: var(--green-deep);
+    border-top: 1px solid rgba(198,169,107,0.2);
+    border-bottom: 1px solid rgba(198,169,107,0.2);
+  }
+  .story blockquote {
+    font-family: var(--serif); font-size: 28px; font-style: italic;
+    color: var(--cream); max-width: 760px; line-height: 1.4;
+  }
+  .story blockquote .gold { color: var(--gold); }
+
+  /* ── CONTACT ── */
+  .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .contact-item { text-align: center; padding: 22px; border: 1px solid rgba(247,245,239,0.12); border-radius: 6px; }
+  .contact-item .k { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .contact-item .v { font-family: var(--serif); font-size: 21px; }
+
+  /* ── BRAND STRIP (discreet footer) ── */
+  .brand-strip {
+    padding: 32px 64px;
+    border-top: 1px solid rgba(198,169,107,0.25);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(247,245,239,0.55); letter-spacing: 0.08em;
+  }
+  .brand-strip .swatches { display: flex; gap: 8px; align-items: center; }
+  .brand-strip .swatch { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); }
+  .brand-strip .sig { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--gold); }
+
+  @media (max-width: 720px) {
+    .hero, section, .brand-strip { padding-left: 24px; padding-right: 24px; }
+    .hero h1 { font-size: 46px; }
+    .method-grid, .contact { grid-template-columns: 1fr; }
+    .services { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-top">
+      <div class="logo"><img src="assets/logo.png" alt="Whitaker Golf"></div>
+      <div class="signature">Resilient Mind. Free Swing.</div>
+    </div>
+    <h1>Your Golf Game Is<br><em>One Clear Fix</em> Away.</h1>
+    <p class="deck"><strong>One fix per session.</strong> Not twenty swing thoughts.</p>
+  </div>
+
+  <!-- POSITIONING -->
+  <section>
+    <div class="section-head">
+      <div class="num">01</div>
+      <div>
+        <div class="label">The Positioning</div>
+        <div class="swoosh"></div>
+      </div>
+    </div>
+    <p class="lead" style="font-size:19px; color:rgba(247,245,239,0.9); max-width:720px; line-height:1.6;">
+      James Whitaker is a PGA Professional in Leeds who coaches golfers to play better with less in their head. Every session ends with <strong style="color:#fff;">one clear fix</strong> — something you can feel, repeat, and take to the first tee. <strong style="color:#fff;">Progress beats perfection.</strong>
+    </p>
+  </section>
+
+  <!-- METHOD -->
+  <section>
+    <div class="section-head">
+      <div class="num">02</div>
+      <div>
+        <div class="label">The One Clear Fix Method</div>
+        <div class="swoosh"></div>
+      </div>
+    </div>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="num">01</div>
+        <h3>See</h3>
+        <p>We find what's actually costing you shots. Not a list. The one thing.</p>
+      </div>
+      <div class="method-card">
+        <div class="num">02</div>
+        <h3>Fix</h3>
+        <p>One change, one feel, one drill. Coached until it's yours, not just explained.</p>
+      </div>
+      <div class="method-card">
+        <div class="num">03</div>
+        <h3>Play</h3>
+        <p>You leave with a fix that survives the course, not just the mat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="section-head">
+      <div class="num">03</div>
+      <div>
+        <div class="label">What He Offers</div>
+        <div class="swoosh"></div>
+      </div>
+    </div>
+    <div class="services">
+      <div class="service">
+        <div>
+          <div class="name">1-2-1 Tuition</div>
+          <div class="desc">One clear fix per session</div>
+        </div>
+      </div>
+      <div class="service">
+        <div>
+          <div class="name">Playing Lessons</div>
+          <div class="desc">Course management &amp; strategy</div>
+        </div>
+      </div>
+      <div class="service">
+        <div>
+          <div class="name">Group Coaching</div>
+          <div class="desc">Learn alongside others</div>
+        </div>
+      </div>
+      <div class="service">
+        <div>
+          <div class="name">Online Coaching</div>
+          <div class="desc">Your swing analysed from anywhere</div>
+        </div>
+      </div>
+      <div class="service">
+        <div>
+          <div class="name">Custom Fitting</div>
+          <div class="desc">The same fitting the pros get</div>
+        </div>
+        <span class="free">Free</span>
+      </div>
+    </div>
+    <p class="fitting-hook">Custom fitting, free. Because the wrong clubs aren't a swing fault.</p>
+  </section>
+
+  <!-- PROOF -->
+  <section>
+    <div class="section-head">
+      <div class="num">04</div>
+      <div>
+        <div class="label">The Proof</div>
+        <div class="swoosh"></div>
+      </div>
+    </div>
+    <p class="proof">
+      Leeds &amp; District Union Head Coach<span class="dot">·</span>Former Head Pro, Moor Allerton &amp; Howley Hall<span class="dot">·</span>Built two PGA Academies (The Belfry; Europe's first Nike Golf Academy, Oulton Hall)<span class="dot">·</span>50+ European Tour pros fitted<span class="dot">·</span>Today's Golfer, National Club Golfer, Golfshake
+    </p>
+  </section>
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="section-head">
+      <div class="num">05</div>
+      <div>
+        <div class="label">The Story</div>
+        <div class="swoosh"></div>
+      </div>
+    </div>
+    <blockquote>
+      "In 2009, five brain surgeries and 50/50 odds took James's swing to zero. He rebuilt it one fix at a time. <span class="gold">That's not a story — it's the method.</span>"
+    </blockquote>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="section-head">
+      <div class="num">06</div>
+      <div>
+        <div class="label">Get In Touch</div>
+        <div class="swoosh"></div>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="contact-item"><div class="k">Email</div><div class="v">james@jwgolf.co.uk</div></div>
+      <div class="contact-item"><div class="k">Phone</div><div class="v">07810 647976</div></div>
+      <div class="contact-item"><div class="k">Based</div><div class="v">Leeds, UK</div></div>
+    </div>
+  </section>
+
+  <!-- BRAND STRIP -->
+  <div class="brand-strip">
+    <span>WHITAKER GOLF · J WHITAKER ACADEMY</span>
+    <div class="swatches">
+      <span class="swatch" style="background:#1F4D3A"></span>
+      <span class="swatch" style="background:#C6A96B"></span>
+      <span class="swatch" style="background:#F7F5EF"></span>
+      <span class="swatch" style="background:#2B2B2B"></span>
+    </div>
+    <span class="sig">Resilient Mind. Free Swing.</span>
+  </div>
+
+</div>
+</body>
+</html>
