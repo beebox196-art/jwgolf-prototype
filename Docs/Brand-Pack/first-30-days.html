@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J Whitaker Academy — Your First 30 Days</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1F4D3A;
+    --green-deep: #16382B;
+    --cream: #F7F5EF;
+    --gold: #C6A96B;
+    --charcoal: #2B2B2B;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--sans);
+    background: var(--green-deep);
+    color: var(--cream);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 900px; margin: 0 auto; background: var(--green); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+  .hero { padding: 48px 56px 40px; border-bottom: 1px solid rgba(198,169,107,0.25); }
+  .hero .kicker { font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+  .hero h1 { font-family: var(--serif); font-size: 46px; font-weight: 500; margin: 12px 0 6px; line-height: 1.1; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero .sub { font-size: 16px; color: rgba(247,245,239,0.8); }
+
+  section { padding: 40px 56px; }
+  .section-label { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 14px; }
+  h2 { font-family: var(--serif); font-size: 30px; font-weight: 500; margin-bottom: 14px; }
+  p { font-size: 15px; color: rgba(247,245,239,0.88); margin-bottom: 12px; }
+  p strong { color: #fff; }
+
+  .big-idea {
+    background: var(--green-deep);
+    border-top: 1px solid rgba(198,169,107,0.2);
+    border-bottom: 1px solid rgba(198,169,107,0.2);
+  }
+  .big-idea blockquote {
+    font-family: var(--serif); font-size: 24px; font-style: italic; line-height: 1.4;
+    color: var(--cream); max-width: 700px;
+  }
+  .big-idea blockquote .gold { color: var(--gold); }
+
+  .funnel { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 0; }
+  .funnel .step {
+    background: rgba(22,56,43,0.6); border: 1px solid rgba(198,169,107,0.3);
+    padding: 10px 16px; border-radius: 6px; font-size: 13px; font-weight: 700;
+  }
+  .funnel .arrow { color: var(--gold); font-size: 18px; }
+
+  .week { margin-bottom: 22px; }
+  .week h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--gold); margin-bottom: 8px; }
+  .week ol { padding-left: 20px; }
+  .week li { font-size: 14px; color: rgba(247,245,239,0.88); margin-bottom: 8px; }
+  .week li strong { color: #fff; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card { background: rgba(22,56,43,0.5); border: 1px solid rgba(198,169,107,0.22); border-radius: 8px; padding: 22px; }
+  .card h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .card p { font-size: 14px; margin-bottom: 6px; }
+
+  .ladder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px; }
+  .ladder .tier { background: rgba(22,56,43,0.5); border: 1px solid rgba(198,169,107,0.25); border-radius: 8px; padding: 18px; }
+  .ladder .tier .t { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--gold); margin-bottom: 4px; }
+  .ladder .tier .d { font-size: 13px; color: rgba(247,245,239,0.75); }
+
+  .rule { background: var(--gold); color: var(--green-deep); border-radius: 8px; padding: 20px 24px; }
+  .rule h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; margin-bottom: 6px; }
+  .rule p { color: var(--green-deep); margin-bottom: 0; font-size: 15px; }
+
+  .footer { padding: 24px 56px; border-top: 1px solid rgba(198,169,107,0.25); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(247,245,239,0.55); letter-spacing: 0.08em; }
+  .footer .sig { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--gold); }
+
+  @media (max-width: 700px) {
+    .hero, section, .footer { padding-left: 24px; padding-right: 24px; }
+    .two-col, .ladder { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="kicker">J Whitaker Academy · Prepared by your AI team</div>
+    <h1>Your First <em>30 Days</em></h1>
+    <p class="sub">A simple plan to turn your coaching into a recognised, profitable business.</p>
+  </div>
+
+  <section class="big-idea">
+    <div class="section-label">The Big Idea</div>
+    <blockquote>
+      You're not "another golf pro." You're the coach who gives golfers <span class="gold">one clear fix</span> — not twenty swing thoughts. That's what people will remember, recommend, and rebook you for.
+    </blockquote>
+  </section>
+
+  <section>
+    <div class="section-label">The Funnel</div>
+    <h2>How a stranger becomes a regular</h2>
+    <div class="funnel">
+      <span class="step">See you online</span><span class="arrow">→</span>
+      <span class="step">Trust you</span><span class="arrow">→</span>
+      <span class="step">Book an assessment</span><span class="arrow">→</span>
+      <span class="step">Get one clear win</span><span class="arrow">→</span>
+      <span class="step">Pack or membership</span>
+    </div>
+    <p>The biggest leak is usually <strong>after the first lesson</strong> — so the follow-up matters more than the first sale.</p>
+  </section>
+
+  <section>
+    <div class="section-label">The Plan</div>
+    <h2>Your 30-Day Plan</h2>
+
+    <div class="week">
+      <h3>Week 1 — Get the foundation right</h3>
+      <ol>
+        <li><strong>Homepage becomes a "One Clear Fix" landing page</strong> — one headline, one booking button. No clutter.</li>
+        <li><strong>Create 3 offers only:</strong> starter assessment · 3-lesson improvement pack · monthly check-in membership.</li>
+        <li><strong>Set up your ChatGPT "saved instructions"</strong> — who you are, the One Clear Fix method, your tone, prices, locations. This 20-minute job makes everything else sound like you.</li>
+      </ol>
+    </div>
+
+    <div class="week">
+      <h3>Week 2 — Email that pays</h3>
+      <ol>
+        <li><strong>Build an email reply template</strong> for enquiries and follow-ups. Reply within 60 seconds of an enquiry — speed is the single biggest lever on bookings.</li>
+        <li><strong>Post-lesson follow-up loop</strong> — after every lesson send: the one clear fix, the drill, and a testimonial ask. Drives rebooking <em>and</em> builds proof.</li>
+      </ol>
+    </div>
+
+    <div class="week">
+      <h3>Week 3 — Get found locally</h3>
+      <ol>
+        <li><strong>Publish 4 local SEO pages/posts</strong> around what Leeds golfers search: "golf lessons Leeds", "driver lesson Leeds", "custom fitting Leeds", "beginner golf lessons near me".</li>
+        <li><strong>Google Business Profile</strong> — photos weekly, one post weekly, and a saved script for asking every happy pupil for a review.</li>
+      </ol>
+    </div>
+
+    <div class="week">
+      <h3>Week 4 — Build momentum</h3>
+      <ol>
+        <li><strong>Collect 10 testimonials</strong> with handicap, problem, fix, and result — gold on your site and socials.</li>
+        <li><strong>Film once, repurpose everywhere</strong> — one filming session, 6–8 clips. Each becomes a caption, a reel script, a post, and a blog paragraph. You film; the tool does the admin.</li>
+        <li><strong>Chase list</strong> — once a week, nudge people who enquired but never booked, or haven't been back in 8 weeks. Found money.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Division of Labour</div>
+    <h2>What You Do vs What We Automate</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>You do</h3>
+        <p>Coach</p>
+        <p>Film a bit of useful content</p>
+        <p>Approve the message</p>
+      </div>
+      <div class="card">
+        <h3>We automate</h3>
+        <p>Email drafts</p>
+        <p>Content drafts</p>
+        <p>Follow-ups, FAQs, testimonial prompts, website copy</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">The Money Model</div>
+    <h2>Escape time-for-money</h2>
+    <p>The trap is selling only one-off lessons. The smarter ladder:</p>
+    <div class="ladder">
+      <div class="tier"><div class="t">Starter assessment</div><div class="d">Gets them in the door</div></div>
+      <div class="tier"><div class="t">3-lesson pack</div><div class="d">Builds momentum</div></div>
+      <div class="tier"><div class="t">Monthly membership</div><div class="d">Recurring value — lesson credit + video review + swing check</div></div>
+    </div>
+    <p style="margin-top:14px;">Plus <strong>online coaching</strong> for people who can't get to Leeds, and <strong>premium custom fitting</strong> for higher-value clients.</p>
+  </section>
+
+  <section>
+    <div class="rule">
+      <h3>The One Rule</h3>
+      <p><strong>Keep James approving every customer-facing draft.</strong> ChatGPT drafts; you approve. That's how the voice stays yours and trust stays high.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:8px;">
+    <div class="section-label">Next Step</div>
+    <h2>Let's Start With Week 1</h2>
+    <p>We'll get the homepage, your three offers, and your ChatGPT profile set up first — then walk the plan week by week. Reply to this email and we'll begin.</p>
+  </section>
+
+  <div class="footer">
+    <span>J WHITAKER ACADEMY · LEEDS</span>
+    <span class="sig">Resilient Mind. Free Swing.</span>
+  </div>
+
+</div>
+</body>
+</html>
