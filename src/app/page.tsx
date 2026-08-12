@@ -4,7 +4,6 @@ import CrystalCard from "@/components/CrystalCard";
 import BlurText from "@/components/BlurText";
 import GoldButton from "@/components/GoldButton";
 import ScrollReveal from "@/components/ScrollReveal";
-import AuroraBackground from "@/components/AuroraBackground";
 
 export default function Home() {
   return (
@@ -45,7 +44,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <Link href="/contact#booking">
-                <GoldButton variant="primary" size="lg" pulse>
+                <GoldButton variant="primary" size="lg">
                   Book Your Assessment
                 </GoldButton>
               </Link>
@@ -62,23 +61,27 @@ export default function Home() {
         <div className="absolute bottom-0 w-full">
           <div className="border-y border-white/[0.06] py-6 bg-black/50 backdrop-blur-sm">
             <div className="section-container">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <CrystalCard className="p-4 text-center" hover="glow">
-                  <div className="text-xl mb-1">🏆</div>
-                  <span className="font-semibold text-sm text-gray-400 font-inter">50+ Tour Pros Fitted</span>
-                </CrystalCard>
-                <CrystalCard className="p-4 text-center" hover="glow">
-                  <div className="text-xl mb-1">🥇</div>
-                  <span className="font-semibold text-sm text-gray-400 font-inter">Titleist Ambassador</span>
-                </CrystalCard>
-                <CrystalCard className="p-4 text-center" hover="glow">
-                  <div className="text-xl mb-1">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
-                  <span className="font-semibold text-sm text-gray-400 font-inter">Leeds Head Coach</span>
-                </CrystalCard>
-                <CrystalCard className="p-4 text-center" hover="glow">
-                  <div className="text-xl mb-1">📰</div>
-                  <span className="font-semibold text-sm text-gray-400 font-inter">Published Writer</span>
-                </CrystalCard>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-accent text-lg font-semibold">PGA</span>
+                  <span className="text-sm text-gray-400 font-inter leading-snug">PGA Professional<br />University of Birmingham</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-accent text-lg font-semibold">Leeds</span>
+                  <span className="text-sm text-gray-400 font-inter leading-snug">Leeds &amp; District Union<br />Head Coach</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-accent text-lg">🏟️</span>
+                  <span className="text-sm text-gray-400 font-inter leading-snug">Moor Allerton · Howley Hall<br />Belfry · Oulton Hall</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-accent text-lg">📰</span>
+                  <span className="text-sm text-gray-400 font-inter leading-snug">Today&apos;s Golfer · Nat Club Golfer<br />Golfshake</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-accent text-lg">🏆</span>
+                  <span className="text-sm text-gray-400 font-inter leading-snug">50+ European Tour<br />Pros Fitted</span>
+                </div>
               </div>
             </div>
           </div>
@@ -147,24 +150,36 @@ export default function Home() {
                   <br /><br />
                   That&apos;s my philosophy. That&apos;s my process. That&apos;s exactly how I got 50+ European Tour professionals to trust me with their game.
                 </p>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <span className="text-accent text-xl leading-6">✓</span>
-                    <span className="text-gray-300 font-inter">One thing to work on, not twenty</span>
+                <ol className="space-y-5">
+                  <li className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center text-accent text-lg font-bold flex-shrink-0 font-inter">1</div>
+                    <div>
+                      <h3 className="font-semibold text-white font-inter">Diagnose</h3>
+                      <p className="text-sm text-gray-500 font-inter">Trackman data and video — the single thing holding your game back.</p>
+                    </div>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-accent text-xl leading-6">✓</span>
-                    <span className="text-gray-300 font-inter">Clear, actionable steps you can apply immediately</span>
+                  <li className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center text-accent text-lg font-bold flex-shrink-0 font-inter">2</div>
+                    <div>
+                      <h3 className="font-semibold text-white font-inter">One Clear Fix</h3>
+                      <p className="text-sm text-gray-500 font-inter">One simple instruction you can apply immediately — not twenty thoughts.</p>
+                    </div>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-accent text-xl leading-6">✓</span>
-                    <span className="text-gray-300 font-inter">Measurable progress you can see and feel</span>
+                  <li className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center text-accent text-lg font-bold flex-shrink-0 font-inter">3</div>
+                    <div>
+                      <h3 className="font-semibold text-white font-inter">Measurable Marker</h3>
+                      <p className="text-sm text-gray-500 font-inter">A clear number or target so you can see the fix working.</p>
+                    </div>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-accent text-xl leading-6">✓</span>
-                    <span className="text-gray-300 font-inter">Mental resilience built on overcoming adversity</span>
+                  <li className="flex items-start gap-4">
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center text-accent text-lg font-bold flex-shrink-0 font-inter">4</div>
+                    <div>
+                      <h3 className="font-semibold text-white font-inter">Practise Until Next Time</h3>
+                      <p className="text-sm text-gray-500 font-inter">A structured plan so the fix sticks — then we build on it next session.</p>
+                    </div>
                   </li>
-                </ul>
+                </ol>
                 <div className="mt-8 pt-8 border-t border-white/[0.08]">
                   <Link href="/about#method">
                     <GoldButton variant="secondary" size="md" className="w-full">
@@ -279,73 +294,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Resilience Story ── */}
-      <section className="section-padding relative overflow-hidden bg-black">
-        <AuroraBackground className="absolute inset-0" />
-
-        <div className="section-container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+      {/* ── Resilience — one understated line, in his own voice ── */}
+      <section className="border-t border-white/[0.06] bg-black">
+        <div className="section-container">
+          <div className="py-14 max-w-3xl mx-auto text-center">
             <ScrollReveal>
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="w-8 h-[1px] bg-accent" />
-                <span className="text-xs tracking-[0.3em] uppercase text-accent font-inter">The Resilience Story</span>
-                <div className="w-8 h-[1px] bg-accent" />
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100}>
-              <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-                Five Brain Surgeries Taught Me <br className="hidden md:block" />
-                <span className="accent-gradient-text">
-                  <BlurText text="What Real Resilience Looks Like" speed={40} delay={300} />
-                </span>
-              </h2>
-            </ScrollReveal>
-
-            <ScrollReveal delay={200}>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed font-inter">
-                I&apos;ve faced brain surgery 5 times. I&apos;ve spent more time in hospitals than on golf courses.
-                <br className="hidden md:block" />
-                <br className="hidden md:block" />
-                And in that struggle, I learned something crucial: <strong className="text-white">progress beats perfection</strong>.
+              <p className="text-lg md:text-xl text-gray-400 italic font-playfair leading-relaxed">
+                &ldquo;I rebuilt my own golf swing from zero after five brain surgeries. I know what
+                under pressure really means — you can only hold one thought. That&apos;s why I teach one clear fix at a time.&rdquo;
               </p>
             </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-10">
-              <ScrollReveal delay={100}>
-                <CrystalCard className="p-6">
-                  <div className="text-3xl mb-4">🧠</div>
-                  <h3 className="text-lg font-bold mb-2 text-white font-inter">Mental Toughness</h3>
-                  <p className="text-sm text-gray-500 font-inter">
-                    Five brain surgeries taught me to face adversity head-on. Your slice doesn&apos;t scare me.
-                  </p>
-                </CrystalCard>
-              </ScrollReveal>
-              <ScrollReveal delay={200}>
-                <CrystalCard className="p-6">
-                  <div className="text-3xl mb-4">🎯</div>
-                  <h3 className="text-lg font-bold mb-2 text-white font-inter">One Thing At A Time</h3>
-                  <p className="text-sm text-gray-500 font-inter">
-                    Recovery happens one day, one exercise, one victory. Golf is the same.
-                  </p>
-                </CrystalCard>
-              </ScrollReveal>
-              <ScrollReveal delay={300}>
-                <CrystalCard className="p-6">
-                  <div className="text-3xl mb-4">📈</div>
-                  <h3 className="text-lg font-bold mb-2 text-white font-inter">Incremental Progress</h3>
-                  <p className="text-sm text-gray-500 font-inter">
-                    I don&apos;t believe in overwhelm. Just clear, measurable progress one step at a time.
-                  </p>
-                </CrystalCard>
-              </ScrollReveal>
-            </div>
-
-            <ScrollReveal>
-              <Link href="/about#story">
-                <GoldButton variant="glass" size="lg">
-                  Read My Full Story
-                </GoldButton>
+            <ScrollReveal delay={100}>
+              <Link href="/about#story" className="inline-block mt-6 text-accent hover:text-accent-light text-sm tracking-wider uppercase font-inter">
+                Read the full story on About
               </Link>
             </ScrollReveal>
           </div>

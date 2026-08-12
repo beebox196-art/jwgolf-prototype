@@ -587,18 +587,24 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map / Location */}
+      {/* The Venue — location block */}
       <section className="section-padding bg-black">
         <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-title font-playfair">The Venue</h2>
+            <p className="section-subtitle font-inter">Where your session happens</p>
+          </div>
+
           <ScrollReveal>
             <CrystalCard className="overflow-hidden" hover="glow">
               <div className="aspect-video bg-surface-card flex items-center justify-center">
-                <div className="text-center">
+                <div className="text-center px-6">
                   <div className="text-6xl mb-4">📍</div>
                   <h3 className="text-2xl font-playfair font-bold text-white mb-2">Leeds, Yorkshire</h3>
-                  <p className="text-gray-400 font-inter">Private coaching facility</p>
+                  <p className="text-gray-400 font-inter">Private coaching facility with Trackman &amp; indoor/outdoor hitting areas</p>
+                  {/* PLACEHOLDER: exact venue name to be confirmed with James. Replace once known. */}
                   <p className="text-sm text-gray-600 mt-4 font-inter">
-                    Exact address provided upon booking confirmation
+                    Exact address and venue name provided upon booking
                   </p>
                 </div>
               </div>
@@ -606,19 +612,19 @@ export default function ContactPage() {
                 <div className="text-center">
                   <h4 className="font-bold text-white mb-2 font-playfair">Parking</h4>
                   <p className="text-sm text-gray-500 font-inter">
-                    Private parking available at facility
+                    Confirm parking details with James when booking
                   </p>
                 </div>
                 <div className="text-center">
-                  <h4 className="font-bold text-white mb-2 font-playfair">Public Transport</h4>
+                  <h4 className="font-bold text-white mb-2 font-playfair">Getting There</h4>
                   <p className="text-sm text-gray-500 font-inter">
-                    10 minutes from Leeds city center
+                    Leeds-based; directions sent after booking
                   </p>
                 </div>
                 <div className="text-center">
-                  <h4 className="font-bold text-white mb-2 font-playfair">Accessibility</h4>
+                  <h4 className="font-bold text-white mb-2 font-playfair">What To Bring</h4>
                   <p className="text-sm text-gray-500 font-inter">
-                    Fully accessible facility
+                    Just your clubs — Trackman, video &amp; balls provided
                   </p>
                 </div>
               </div>

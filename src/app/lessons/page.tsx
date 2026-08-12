@@ -353,6 +353,7 @@ export default function LessonsPage() {
                 </CrystalCard>
 
                 <CrystalCard variant="gold" className="p-6 relative" hover="glow">
+                  {/* CONFIRM WITH JAMES: monthly subscription £250/month & 3-month £675 package are NOT in the scraped pricing (which only lists Online £50/lesson). Confirm before launch. */}
                   <div className="absolute -top-3 right-6">
                     <span className="bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
                       Best Value
@@ -392,6 +393,65 @@ export default function LessonsPage() {
                   ✅ All online coaching includes one clear fix, video feedback, and practice plan
                 </p>
               </CrystalCard>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Free Custom Fitting — segmented lead magnet */}
+      <section className="section-padding bg-accent relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-15"
+          style={{
+            background: `radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 60%)`,
+          }}
+        />
+        <div className="section-container relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <ScrollReveal>
+              <span className="inline-block px-4 py-1.5 rounded-full bg-black/30 text-white text-xs tracking-[0.2em] uppercase mb-6 font-inter">
+                Free Custom Fitting
+              </span>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6 text-white">
+                Your Fitting Is Free.
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <p className="text-xl text-white/85 max-w-3xl mx-auto mb-8 leading-relaxed font-inter">
+                When you buy your clubs through me, the fitting is <strong className="text-white">completely free</strong>.
+                I don&apos;t charge for the fitting itself — because the right clubs are the point.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left mb-10">
+                <CrystalCard className="p-5">
+                  <h4 className="font-bold text-white mb-2 font-playfair">What I Measure</h4>
+                  <p className="text-sm text-white/80 font-inter">
+                    Length, lie, loft, shaft flex &amp; weight, and grip — matched to your swing, not a size chart.
+                  </p>
+                </CrystalCard>
+                <CrystalCard className="p-5">
+                  <h4 className="font-bold text-white mb-2 font-playfair">Why It&apos;s Free</h4>
+                  <p className="text-sm text-white/80 font-inter">
+                    The right set-up sells itself. I&apos;d rather fit you properly than sell you the wrong clubs twice.
+                  </p>
+                </CrystalCard>
+                <CrystalCard className="p-5">
+                  <h4 className="font-bold text-white mb-2 font-playfair">Trackman Data</h4>
+                  <p className="text-sm text-white/80 font-inter">
+                    The same launch-monitor analysis the pros use, so your fitting is data-driven, not guesswork.
+                  </p>
+                </CrystalCard>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={400}>
+              <Link href="/contact#fitting">
+                <GoldButton variant="primary" size="lg" pulse className="bg-black text-accent hover:bg-black/80">
+                  Book Your Free Fitting
+                </GoldButton>
+              </Link>
             </ScrollReveal>
           </div>
         </div>
@@ -444,6 +504,7 @@ export default function LessonsPage() {
                 <h3 className="text-2xl font-playfair font-bold mb-6 text-white">Fitting Services</h3>
 
                 <div className="space-y-4 mb-8">
+                  {/* CONFIRM WITH JAMES: fitted-tier pricing below conflicts with scraped "Custom fitting FREE" figure. If fitting is free when clubs are purchased through James, these per-tier prices may be legacy. Confirm before launch. */}
                   {[
                     { title: "Full Bag Fitting", price: "£250", desc: "Complete equipment analysis and fitting for driver, fairway woods, hybrids, irons, wedges, and putter.", duration: "2-2.5 hours" },
                     { title: "Driver & Fairway Fitting", price: "£150", desc: "Professional fitting for driver and fairway woods/hybrids to maximize distance and accuracy.", duration: "1-1.5 hours" },

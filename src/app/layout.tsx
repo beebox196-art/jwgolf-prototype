@@ -56,14 +56,49 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <Link href="/contact" className="nav-link font-inter text-sm">Book</Link>
               </div>
 
-              <div className="hidden md:block">
+              {/* Direct contact — phone + email in header on every page */}
+              <div className="hidden lg:flex items-center gap-5 text-sm font-inter">
+                <a
+                  href="tel:07810647976"
+                  className="nav-link flex items-center gap-1.5 whitespace-nowrap"
+                >
+                  <span aria-hidden="true">📱</span> 07810 647976
+                </a>
+                <a
+                  href="mailto:james@jwgolf.co.uk"
+                  className="nav-link flex items-center gap-1.5 whitespace-nowrap"
+                >
+                  <span aria-hidden="true">✉️</span> Email
+                </a>
+              </div>
+
+              <div className="hidden md:flex items-center gap-3">
+                <a
+                  href="tel:07810647976"
+                  className="md:hidden lg:inline-flex btn-secondary px-4 py-2 text-sm whitespace-nowrap"
+                  aria-label="Call James"
+                >
+                  Call
+                </a>
                 <Link href="/contact#booking" className="btn-primary px-6 py-2 text-sm">
                   Book Now
                 </Link>
               </div>
 
-              <div className="md:hidden">
-                <button className="text-white text-2xl">☰</button>
+              <div className="md:hidden flex items-center gap-2">
+                <a
+                  href="tel:07810647976"
+                  className="btn-secondary px-3 py-2 text-sm"
+                  aria-label="Call James"
+                >
+                  📱 Call
+                </a>
+                <Link
+                  href="/contact#booking"
+                  className="btn-primary px-4 py-2 text-sm"
+                >
+                  Book
+                </Link>
               </div>
             </div>
           </div>
