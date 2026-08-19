@@ -13,7 +13,7 @@ export default function AboutPage() {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute right-0 top-0 h-full w-full md:w-1/2 opacity-15 md:opacity-25">
           <Image
-            src="/images/brand.png"
+            src="/images/coaching/james-portrait.jpg"
             alt="James Whittaker - PGA Professional"
             fill
             className="object-cover object-right grayscale"

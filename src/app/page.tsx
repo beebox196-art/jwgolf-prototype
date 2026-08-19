@@ -13,8 +13,8 @@ export default function Home() {
         {/* Hero image — full bleed, desaturated */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero.png"
-            alt="James Whittaker Golf - Hand and ball on tee"
+            src="/images/coaching/james-swing.jpg"
+            alt="James Whittaker - mid swing"
             fill
             className="object-cover object-center opacity-30 grayscale"
             priority
