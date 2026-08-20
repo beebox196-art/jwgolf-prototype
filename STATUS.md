@@ -1,22 +1,22 @@
 # JWGolf Project Status
 
 ## Stage
-active — re-engaged & delivering (12 Aug 2026)
+active — re-engaged, site live, delivering at pace (12 Aug 2026, updated 20 Aug 2026)
 
 ---
 
-## Current Status: FULLY RE-ENGAGED — DELIVERING AT PACE
+## Current Status: FULLY RE-ENGAGED — SITE LIVE & DELIVERING AT PACE
 
 Project is live and moving fast. James met Adam on 12 Aug 2026 and we're delivering a full professionalisation: website uplift, brand pack, and a 30-day business plan. Multi-agent effort (Bee + Claude + Charlie via AgentDrop).
 
-**Live prototype:** https://jwgolf-prototype.vercel.app (uplift built, NOT yet deployed — see Deploy Blocker)
+**Live prototype:** https://jwgolf-prototype.vercel.app — **LIVE with real coaching photos** (deployed 19 Aug, commit `9532350`). Uplift + photos verified serving (HTTP 200).
 
 ---
 
 ## What's Been Delivered (12 Aug 2026)
 
-### ✅ Website Uplift — BUILT & COMMITTED (not yet live)
-- Commit `1692080` on `main` — "feat: JWGolf uplift — credentials strip, One Clear Fix method, booking CTA, fitting highlight, trimmed effects"
+### ✅ Website Uplift — LIVE
+- Commit `1692080` on `main` — "feat: JWGolf uplift — credentials strip, One Clear Fix method, booking CTA, fitting highlight, trimmed effects" — **deployed to production 13 Aug** (commit `41f38e6`), Vercel token saved
 - Build verified clean (5 static pages, all prerendered)
 - Changes (per Claude's strategy):
   - **Credentials strip above the fold** — dense factual proof (PGA + Birmingham, Leeds & District Head Coach, Moor Allerton · Howley Hall · Belfry · Oulton Hall, Today's Golfer · Nat Club Golfer · Golfshake, 50+ European Tour pros)
@@ -26,6 +26,12 @@ Project is live and moving fast. James met Adam on 12 Aug 2026 and we're deliver
   - **Effects trimmed ~a third** — premium is spare
   - **Resilience understated** — one line in James's voice on homepage, full story on About
 - **Static export packaged** for James to review locally: `jwgolf-uplift-static.zip` (11.2 MB, on Desktop)
+
+### ✅ Real Coaching Photos — INTEGRATED & LIVE (19 Aug 2026)
+- Commit `9532350` — "feat: integrate real coaching photos (originals) into hero/about/lessons; deploy live"
+- Photos from James (received 17 Aug, originals in `Docs/Images/`) added to `public/images/coaching/` (portrait, swing, walking, with-bag) and wired into hero/about/lessons
+- Verified live: all 4 coaching images serving HTTP 200
+- **This was the #1 premium upgrade** — real coaching photography now in place, no stock imagery
 
 ### ✅ Brand Pack — BUILT & SENT TO JAMES
 - One-page premium brand pack (forest green #1F4D3A, gold #C6A96B, cream #F7F5EF, Garamond + Lato)
@@ -58,30 +64,22 @@ Strategy memos saved: `Docs/UPLIFT-STRATEGY-CLAUDE-2026-08-12.md`, `Docs/CHATGPT
 
 ---
 
-## ⚠️ Deploy Blocker — NEEDS ADAM
+## Pending Items — Awaiting James / Next Actions
 
-The uplift is built and committed, but **NOT live**. The live site still shows the old build.
+**Resolved:**
+- ✅ **Photography** — real coaching photos received (17 Aug) + integrated & deployed live (19 Aug)
+- ✅ **Deploy** — site live, Vercel token saved
+- ✅ **Consolidated reply** — sent 14 Aug (draft 2197) covering testimonials, photos, ambassadors + golfrep.co feedback + Me and My Golf email offer
 
-**Why:** No Vercel token on this machine; no Cloudflare/Wrangler auth; no `gh` CLI auth. The GitHub push did NOT auto-trigger a Vercel deploy.
-
-**To get it live, one of:**
-- Vercel token (or `vercel login`) → deploy real build to prototype URL
-- Cloudflare API token → deploy static export as Worker/Pages project
-- Adam creates Cloudflare project / enables GitHub Pages → Bee pushes static export
-
-**Fallback already delivered:** static zip for James to review locally.
-
----
-
-## Pending Items — Awaiting James
-
-1. **Testimonial provenance** — are Mark Thompson, Sarah Johnson, Tom Williams real clients? (flagged as potential placeholder copy — must confirm before launch)
-2. **Photography** — real coaching photos (biggest premium upgrade; stock imagery would undo the work)
-3. **Ambassador status** — Nike (historical, left hardware 2016) vs Titleist (current) — confirm
-4. **Pricing confirmation** — scraped rates vs fitted-tier prices (£250/£150/£120/£100) and online packages (£250/mo, £675) — CONFLICT flagged in code comments
-5. **Venue name + address** — for Contact page venue block (currently placeholder)
-6. **Punchline check** — does "Your Golf Game Is One Clear Fix Away" feel right?
-7. **ChatGPT setup** — James setting up ChatGPT desktop on new MacBook Pro (in progress)
+**Still open:**
+1. **Testimonial provenance** — are Mark Thompson, Sarah Johnson, Tom Williams real clients? (flagged as potential placeholder copy — must confirm)
+2. **Ambassador status** — Nike (historical) vs Titleist (current) — confirm for logos
+3. **Pricing confirmation** — scraped rates vs fitted-tier prices (£250/£150/£120/£100) and online packages (£250/mo, £675) — CONFLICT flagged in code comments
+4. **Venue name + address** — for Contact page venue block (currently placeholder)
+5. **Punchline check** — does "Your Golf Game Is One Clear Fix Away" feel right?
+6. **ChatGPT setup** — James setting up ChatGPT desktop on new machine (in progress)
+7. **Me and My Golf-style email template** — offered to draft (awaiting James's go-ahead)
+8. **Photos follow-up cron** `35f2b178` — 18 Aug: photos were received, no reminder needed
 
 ---
 
@@ -102,8 +100,8 @@ The uplift is built and committed, but **NOT live**. The live site still shows t
 
 ## Next Steps
 
-1. **Get deploy access sorted** (Adam) → put uplift live
-2. **Await James's replies** to the 3 emails (testimonials, photos, pricing, venue, punchline)
+1. **Await James's replies** on open items (testimonials real?, Nike/Titleist ambassador, pricing, venue, punchline)
+2. **Me and My Golf email template** — draft if James gives go-ahead (storytelling format fits One Clear Fix)
 3. **Walk James through Week 1** of the 30-day plan (homepage, 3 offers, ChatGPT profile)
 4. **Consolidate Charlie + Claude** into ongoing action plan as James responds
 
@@ -119,7 +117,11 @@ The uplift is built and committed, but **NOT live**. The live site still shows t
 ---
 
 ## Activity Log
-- **2026-08-12T21:28:00** - First 30 Days plan emailed to James (PDF attached)
+- **2026-08-19T18:37:00** - Real coaching photos integrated into hero/about/lessons + deployed live (`9532350`)
+- **2026-08-18T17:2x:00** - Real coaching photos received from James (originals in `Docs/Images/`)
+- **2026-08-14T12:55:00** - Consolidated reply sent to James (draft 2197): open items + golfrep.co feedback + Me and My Golf email offer
+- **2026-08-13T12:56:00** - "Your new website is live" email to James; uplift deployed to production (`41f38e6`), Vercel token saved
+- **2026-08-12T21:28:00** - First 30 Days plan emailed to James (PDF sent)
 - **2026-08-12T21:27:00** - First 30 Days plan built (Claude + Charlie consolidated), committed `d2639a6`
 - **2026-08-12T19:27:00** - Brand pack emailed to James (PDF attached)
 - **2026-08-12T19:21:00** - Brand pack built, committed `1cb38f6`
