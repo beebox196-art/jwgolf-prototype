@@ -117,6 +117,8 @@ Strategy memos saved: `Docs/UPLIFT-STRATEGY-CLAUDE-2026-08-12.md`, `Docs/CHATGPT
 ---
 
 ## Activity Log
+- **2026-08-20T09:30:00** - Reminder email sent to James (signed Bee): 3 open items + Me and My Golf email offer. Comms moved Telegram → BeeChat (Bee = key player)
+- **2026-08-20T09:00:00** - STATUS.md refreshed to reflect live site + photos (commit `10026a3`)
 - **2026-08-19T18:37:00** - Real coaching photos integrated into hero/about/lessons + deployed live (`9532350`)
 - **2026-08-18T17:2x:00** - Real coaching photos received from James (originals in `Docs/Images/`)
 - **2026-08-14T12:55:00** - Consolidated reply sent to James (draft 2197): open items + golfrep.co feedback + Me and My Golf email offer
