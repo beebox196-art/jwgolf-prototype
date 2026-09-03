@@ -117,6 +117,8 @@ Strategy memos saved: `Docs/UPLIFT-STRATEGY-CLAUDE-2026-08-12.md`, `Docs/CHATGPT
 ---
 
 ## Activity Log
+- **2026-09-03T17:28:00** - Reach-out email sent to James (signed Bee): website updates (gold brand alignment, hero/button polish, name spelling fix, Mark Speight testimonial) + chased 7 outstanding items (testimonial provenance, ambassador status, venue, pricing, punchline, ChatGPT setup, email template)
+- **2026-09-03T16:00:00** - Team fix deployed: heading reveal + gold gradient paint-through (Q implementation, Kieran-reviewed PASS). Live verified: gold headings visible, white headings stay white
 - **2026-08-20T09:30:00** - Reminder email sent to James (signed Bee): 3 open items + Me and My Golf email offer. Comms moved Telegram → BeeChat (Bee = key player)
 - **2026-08-20T09:00:00** - STATUS.md refreshed to reflect live site + photos (commit `10026a3`)
 - **2026-08-19T18:37:00** - Real coaching photos integrated into hero/about/lessons + deployed live (`9532350`)
