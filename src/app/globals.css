@@ -446,11 +446,35 @@ body {
 /* Default state: every letter is fully visible and readable. The reveal
    animation below is a progressive enhancement — if JS fails, hydration
    is interrupted, or `prefers-reduced-motion` is set, the heading stays
-   at this visible state. */
+   at this visible state.
+
+   IMPORTANT: We paint the gold gradient (background-clip: text) directly
+   on each letter span rather than relying on an ancestor's
+   `background-clip: text` to paint through. Reason: the reveal animation
+   uses `transform: translateY(...)` on each letter, which creates a new
+   stacking context on the child. WebKit (Safari) and some Chromium
+   versions fail to propagate `background-clip: text` from a parent
+   through transformed descendants — the text renders transparent
+   because the child's own stacking context hides the parent's clipped
+   gradient. Putting the gradient + clip on the leaf element guarantees
+   the gold actually paints, even mid-animation.
+
+   The gradient is scoped to `.accent-gradient-text .blur-text-char` so
+   only headings intended to be gold get the gradient — white headings
+   (e.g. "Get In Touch", "Coaching Services") stay white. */
 .blur-text-char {
   display: inline-block;
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Gold gradient painted on the leaf letter spans, scoped to headings
+   that use the gold accent gradient. */
+.accent-gradient-text .blur-text-char {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Sequential focus-in reveal. Uses opacity + transform (compositor-friendly)
