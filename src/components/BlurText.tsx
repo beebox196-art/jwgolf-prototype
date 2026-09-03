@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface BlurTextProps {
   text: string;
@@ -15,6 +15,9 @@ interface BlurTextProps {
  *
  * Letters start blurred, then focus in sequentially.
  * Uses CSS filter: blur() animation with configurable speed and delay.
+ *
+ * Runs the reveal on every mount (no persistent ref guard) so the
+ * animation replays correctly on refresh and client-side navigation.
  */
 export default function BlurText({
   text,
@@ -24,12 +27,8 @@ export default function BlurText({
   revealedClassName = "is-revealed",
 }: BlurTextProps) {
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
-  const initialized = useRef(false);
 
   useEffect(() => {
-    if (initialized.current) return;
-    initialized.current = true;
-
     const timeouts: NodeJS.Timeout[] = [];
 
     // Start revealing after initial delay
