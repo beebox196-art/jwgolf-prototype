@@ -443,30 +443,47 @@ body {
    BLUR TEXT ANIMATION
    ═══════════════════════════════════════════ */
 
+/* Default state: every letter is fully visible and readable. The reveal
+   animation below is a progressive enhancement — if JS fails, hydration
+   is interrupted, or `prefers-reduced-motion` is set, the heading stays
+   at this visible state. */
 .blur-text-char {
   display: inline-block;
-  /* Default: fully visible. The reveal is a progressive enhancement. */
   opacity: 1;
   transform: translateY(0);
 }
 
-.blur-text-char.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
+/* Sequential focus-in reveal. Uses opacity + transform (compositor-friendly)
+   rather than filter: blur(), which avoids repaint glitches on scroll in
+   Safari/Chrome. `animation-fill-mode: backwards` keeps the `from` state
+   applied during the per-letter delay window so the staggered focus-in
+   reads correctly; after the animation completes each letter returns to
+   its base (fully visible) state, so the heading can never get stuck
+   invisible. */
+@keyframes blurCharReveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* While animating, letters start invisible + slightly raised, then settle in.
-   Uses opacity + transform (compositor-friendly) rather than filter: blur(),
-   which avoids repaint glitches on scroll in Safari/Chrome. */
-.blur-text-char.is-animating {
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+.blur-text-char {
+  animation-name: blurCharReveal;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
-.blur-text-char.is-animating.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
+/* Respect reduced-motion: skip the entrance animation entirely so the
+   heading paints at the default (fully visible) state immediately. */
+@media (prefers-reduced-motion: reduce) {
+  .blur-text-char {
+    animation: none;
+  }
 }
 
 /* ═══════════════════════════════════════════
