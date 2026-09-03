@@ -15,7 +15,7 @@ export default function ContactPage() {
           className="absolute inset-0 opacity-20"
           style={{
             background: `
-              radial-gradient(ellipse 60% 50% at 50% 0%, rgba(185, 28, 62, 0.08) 0%, transparent 60%)
+              radial-gradient(ellipse 60% 50% at 50% 0%, rgba(198, 169, 107, 0.08) 0%, transparent 60%)
             `,
           }}
         />

@@ -58,9 +58,9 @@ export default function FairwayPath() {
       >
         <defs>
           <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#d4af37" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#d4af37" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#d4af37" stopOpacity="0.8" />
+            <stop offset="0%" stopColor="#C6A96B" stopOpacity="0.8" />
+            <stop offset="50%" stopColor="#C6A96B" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#C6A96B" stopOpacity="0.8" />
           </linearGradient>
         </defs>
 
@@ -88,7 +88,7 @@ export default function FairwayPath() {
           cx="30"
           cy="8"
           r="4"
-          fill="#d4af37"
+          fill="#C6A96B"
           className="gold-bloom"
           opacity={progress > 0.01 ? 1 : 0.3}
         />
@@ -99,7 +99,7 @@ export default function FairwayPath() {
           cy="3992"
           r={progress > 0.95 ? 12 + (progress - 0.95) * 80 : 4}
           fill="none"
-          stroke="#d4af37"
+          stroke="#C6A96B"
           strokeWidth="1"
           opacity={progress > 0.95 ? (progress - 0.95) * 10 : 0}
         />

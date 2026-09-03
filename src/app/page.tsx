@@ -4,6 +4,7 @@ import CrystalCard from "@/components/CrystalCard";
 import BlurText from "@/components/BlurText";
 import GoldButton from "@/components/GoldButton";
 import ScrollReveal from "@/components/ScrollReveal";
+import LineIcon from "@/components/LineIcon";
 
 export default function Home() {
   return (
@@ -57,6 +58,12 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Scroll cue — quiet affordance above the social proof bar */}
+        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 pointer-events-none">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-gray-500 font-inter">Scroll</span>
+          <span className="scroll-cue-line" />
+        </div>
+
         {/* Social proof bar — bottom of hero */}
         <div className="absolute bottom-0 w-full">
           <div className="border-y border-white/[0.06] py-6 bg-black/50 backdrop-blur-sm">
@@ -71,15 +78,15 @@ export default function Home() {
                   <span className="text-sm text-gray-400 font-inter leading-snug">Leeds &amp; District Union<br />Head Coach</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-accent text-lg">🏟️</span>
+                  <span className="text-accent flex-shrink-0"><LineIcon name="venue" /></span>
                   <span className="text-sm text-gray-400 font-inter leading-snug">Moor Allerton · Howley Hall<br />Belfry · Oulton Hall</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-accent text-lg">📰</span>
+                  <span className="text-accent flex-shrink-0"><LineIcon name="press" /></span>
                   <span className="text-sm text-gray-400 font-inter leading-snug">Today&apos;s Golfer · Nat Club Golfer<br />Golfshake</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-accent text-lg">🏆</span>
+                  <span className="text-accent flex-shrink-0"><LineIcon name="trophy" /></span>
                   <span className="text-sm text-gray-400 font-inter leading-snug">50+ European Tour<br />Pros Fitted</span>
                 </div>
               </div>
