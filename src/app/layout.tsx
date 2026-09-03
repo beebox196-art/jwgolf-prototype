@@ -23,8 +23,8 @@ interface RootLayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: "One Clear Fix Golf Coaching | James Whittaker PGA",
-  description: "Premium golf coaching with James Whittaker, PGA Professional. Titleist Ambassador, 50+ Tour Pros fitted, Leeds & District Head Coach. The Resilient Coach.",
+  title: "One Clear Fix Golf Coaching | James Whitaker PGA",
+  description: "Premium golf coaching with James Whitaker, PGA Professional. Titleist Ambassador, 50+ Tour Pros fitted, Leeds & District Head Coach. The Resilient Coach.",
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -41,7 +41,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <Link href="/" className="flex items-center gap-3">
                 <Image
                   src="/images/logo.gif"
-                  alt="James Whittaker Golf Logo"
+                  alt="James Whitaker Golf Logo"
                   width={120}
                   height={40}
                   className="h-10 md:h-12 object-contain"
@@ -110,7 +110,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="section-container">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-white font-playfair">James Whittaker</h3>
+                <h3 className="text-2xl font-bold text-white font-playfair">James Whitaker</h3>
                 <p className="text-gray-500 text-sm font-inter">
                   PGA Professional · Titleist Ambassador
                   <br />
@@ -186,7 +186,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
             <div className="mt-14 pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-600 text-sm font-inter">
-                © {new Date().getFullYear()} James Whittaker Golf Coaching. All rights reserved.
+                © {new Date().getFullYear()} James Whitaker Golf Coaching. All rights reserved.
               </p>
               <div className="flex gap-6">
                 <Link href="#" className="text-gray-600 hover:text-white transition-colors font-inter text-sm">

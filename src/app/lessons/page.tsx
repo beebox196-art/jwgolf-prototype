@@ -14,7 +14,7 @@ export default function LessonsPage() {
         <div className="absolute right-0 top-0 h-full w-full md:w-1/2 opacity-15 md:opacity-25">
           <Image
             src="/images/coaching/james-with-bag.jpg"
-            alt="James Whittaker Golf Coaching"
+            alt="James Whitaker Golf Coaching"
             fill
             className="object-cover object-right grayscale"
             priority
@@ -84,7 +84,7 @@ export default function LessonsPage() {
                   &ldquo;I&apos;ve spent my entire career helping golfers improve — from 50+ European Tour pros
                   to absolute beginners. My goal is always the same: <strong>one clear fix, one victory at a time</strong>.&rdquo;
                 </p>
-                <p className="text-accent mt-2 font-bold font-playfair">— James Whittaker, PGA</p>
+                <p className="text-accent mt-2 font-bold font-playfair">— James Whitaker, PGA</p>
               </CrystalCard>
             </CrystalCard>
           </ScrollReveal>

@@ -15,7 +15,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="/images/coaching/james-swing.jpg"
-            alt="James Whittaker - mid swing"
+            alt="James Whitaker - mid swing"
             fill
             className="object-cover object-center opacity-30 grayscale"
             priority
@@ -40,7 +40,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-inter">
-              James Whittaker, PGA Professional.<br />
+              James Whitaker, PGA Professional.<br />
               5 brain surgeries. 50+ Tour pros fitted. Leeds &amp; District Union Head Coach.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
@@ -394,6 +394,39 @@ export default function Home() {
               my methods deliver results.
             </p>
           </div>
+
+          {/* Featured testimonial — real client, Mark Speight */}
+          <ScrollReveal className="mb-6">
+            <CrystalCard variant="gold" className="p-8 md:p-10" hover="glow">
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="flex items-center gap-4 md:flex-col md:items-start md:flex-shrink-0 md:w-56">
+                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center text-2xl flex-shrink-0">
+                    👤
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white font-inter">Mark Speight</h4>
+                    <p className="text-sm text-gray-500 font-inter">Handicap: 80s &amp; falling</p>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-lg text-gray-300 italic font-inter leading-relaxed">
+                    &ldquo;I started working with James around 12 months ago, I was distraught, strong word for just a hobby!
+                    I&apos;d hit a brick wall, not only is golf a hobby it&apos;s a work tool, all I wanted was to be able to turn up
+                    on a corporate or any golf day and be able to hold my head up, you gain more respect and opportunities
+                    if you can actually play and compete than just turning up.
+                    <br /><br />
+                    James was patient and straight talking, he didn&apos;t complicate anything, he built a swing that suited me,
+                    he gave me the tools and confidence to turn up and hold my head high.
+                    After shooting an unbelievable 81 he convinced me to change my clubs!
+                    Back to square one, not quite but after a few months I&apos;m now scoring in the 80s on a regular basis,
+                    as for James, why would I not keep going, he&apos;s worth every penny. Next step, single figure handicap.
+                    Thank you, James Whitaker!&rdquo;
+                  </p>
+                  <div className="flex text-accent text-xl mt-4">★★★★★</div>
+                </div>
+              </div>
+            </CrystalCard>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <ScrollReveal>

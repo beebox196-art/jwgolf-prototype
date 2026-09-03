@@ -14,7 +14,7 @@ export default function AboutPage() {
         <div className="absolute right-0 top-0 h-full w-full md:w-1/2 opacity-15 md:opacity-25">
           <Image
             src="/images/coaching/james-portrait.jpg"
-            alt="James Whittaker - PGA Professional"
+            alt="James Whitaker - PGA Professional"
             fill
             className="object-cover object-right grayscale"
             priority
@@ -32,7 +32,7 @@ export default function AboutPage() {
             <BlurText text="The Resilient Coach" speed={50} delay={300} />
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto font-inter">
-            James Whittaker&apos;s journey from 5 brain surgeries to helping 50+ European Tour professionals
+            James Whitaker&apos;s journey from 5 brain surgeries to helping 50+ European Tour professionals
           </p>
         </div>
       </section>

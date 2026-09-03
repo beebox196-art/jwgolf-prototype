@@ -1,10 +1,10 @@
 # JW Golf Website Prototype
 
-The official website prototype for James Whittaker, PGA Professional - "The Resilient Coach"
+The official website prototype for James Whitaker, PGA Professional - "The Resilient Coach"
 
 ## About
 
-This is a stunning, modern Next.js website prototype built to showcase James Whittaker's unique value proposition:
+This is a stunning, modern Next.js website prototype built to showcase James Whitaker's unique value proposition:
 
 - **The One Clear Fix Method** - Simplicity in a world of golf instruction overload
 - **The Resilience Story** - Five brain surgeries, now coaching 50+ European Tour pros
@@ -71,7 +71,7 @@ All copy is based on the re-design plan: `/Users/openclaw/projects/Optimisation/
 
 ## Next Steps
 
-1. Add actual James Whittaker photos
+1. Add actual James Whitaker photos
 2. Replace placeholder testimonial content with real testimonials
 3. Set up Calendly booking integration
 4. Add form backend for lead capture
@@ -83,5 +83,5 @@ For questions about this website, contact the developer.
 
 ---
 
-**Built for James Whittaker, PGA Professional**  
+**Built for James Whitaker, PGA Professional**  
 *"One Clear Fix at a Time"*

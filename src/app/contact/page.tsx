@@ -115,7 +115,7 @@ export default function ContactPage() {
                       type="text"
                       name="lastName"
                       className="form-input"
-                      placeholder="Whittaker"
+                      placeholder="Whitaker"
                     />
                   </div>
                 </div>
@@ -248,7 +248,7 @@ export default function ContactPage() {
                       type="text"
                       name="lastName"
                       className="form-input"
-                      placeholder="Whittaker"
+                      placeholder="Whitaker"
                     />
                   </div>
                 </div>
@@ -345,7 +345,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="form-label">Last Name</label>
-                    <input type="text" name="lastName" className="form-input" placeholder="Whittaker" />
+                    <input type="text" name="lastName" className="form-input" placeholder="Whitaker" />
                   </div>
                 </div>
 
@@ -426,7 +426,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="form-label">Last Name</label>
-                    <input type="text" name="lastName" className="form-input" placeholder="Whittaker" />
+                    <input type="text" name="lastName" className="form-input" placeholder="Whitaker" />
                   </div>
                 </div>
 
@@ -509,7 +509,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="form-label">Last Name</label>
-                    <input type="text" name="lastName" className="form-input" placeholder="Whittaker" />
+                    <input type="text" name="lastName" className="form-input" placeholder="Whitaker" />
                   </div>
                 </div>
 
