@@ -16,8 +16,10 @@ interface BlurTextProps {
  * Letters start blurred, then focus in sequentially.
  * Uses CSS filter: blur() animation with configurable speed and delay.
  *
- * Runs the reveal on every mount (no persistent ref guard) so the
- * animation replays correctly on refresh and client-side navigation.
+ * Robustness: a safety timeout forces every letter visible after the full
+ * animation window, so the heading can never get stuck showing only the
+ * first character — even if the sequential reveal is interrupted, the
+ * browser fails to repaint, or the effect is re-triggered on scroll.
  */
 export default function BlurText({
   text,
@@ -43,6 +45,14 @@ export default function BlurText({
 
     timeouts.push(startTimeout);
 
+    // Safety net: force every letter visible after the full animation window.
+    // Guarantees the heading is never stuck partially revealed.
+    const totalDuration = delay + text.length * speed + 500;
+    const safetyTimeout = setTimeout(() => {
+      setRevealed(new Set(text.split("").map((_, i) => i)));
+    }, totalDuration);
+    timeouts.push(safetyTimeout);
+
     return () => timeouts.forEach(clearTimeout);
   }, [text, speed, delay]);
 
@@ -55,7 +65,7 @@ export default function BlurText({
         return (
           <span
             key={index}
-            className={`blur-text-char ${isRevealed ? revealedClassName : ""}`}
+            className={`blur-text-char is-animating ${isRevealed ? revealedClassName : ""}`}
             style={{
               transitionDelay: `${index * speed}ms`,
               minWidth: isSpace ? "0.3em" : undefined,

@@ -445,14 +445,28 @@ body {
 
 .blur-text-char {
   display: inline-block;
-  filter: blur(8px);
-  opacity: 0;
-  transition: filter 0.8s ease-out, opacity 0.8s ease-out;
+  /* Default: fully visible. The reveal is a progressive enhancement. */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .blur-text-char.is-revealed {
-  filter: blur(0px);
   opacity: 1;
+  transform: translateY(0);
+}
+
+/* While animating, letters start invisible + slightly raised, then settle in.
+   Uses opacity + transform (compositor-friendly) rather than filter: blur(),
+   which avoids repaint glitches on scroll in Safari/Chrome. */
+.blur-text-char.is-animating {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.blur-text-char.is-animating.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ═══════════════════════════════════════════
